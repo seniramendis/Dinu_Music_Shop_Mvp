@@ -578,46 +578,6 @@
             color: var(--ink-faint);
         }
 
-        .msub-toggle {
-            width: 100%;
-            text-align: left;
-            background: none;
-            border: none;
-            border-top: 1px solid var(--hairline);
-            padding: 15px 32px;
-            font-weight: 600;
-            color: var(--ink-muted);
-            font-size: 14.5px;
-            font-family: inherit;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-        }
-
-        .mchev {
-            width: 8px;
-            height: 8px;
-            border-right: 1.5px solid currentColor;
-            border-bottom: 1.5px solid currentColor;
-            transform: rotate(45deg);
-            transition: transform .2s;
-            flex-shrink: 0;
-        }
-
-        .msub-toggle.open .mchev {
-            transform: rotate(225deg);
-        }
-
-        .msub {
-            display: none;
-            flex-direction: column;
-        }
-
-        .msub.open {
-            display: flex;
-        }
-
         /* ============ HERO SLIDER ============ */
         .hero-slider {
             position: relative;
@@ -1628,12 +1588,11 @@
 
         @media (max-width:980px) {
             .hero-slider {
-                min-height: 600px;
+                min-height: 640px;
             }
 
             .about .wrap {
                 grid-template-columns: 1fr;
-                gap: 36px;
             }
 
             .features .wrap {
@@ -1650,7 +1609,6 @@
 
             .contact .wrap {
                 grid-template-columns: 1fr;
-                gap: 36px;
             }
 
             .foot-grid {
@@ -1659,13 +1617,6 @@
         }
 
         @media (max-width:760px) {
-            .wrap {
-                padding: 0 20px;
-            }
-
-            section {
-                padding: 56px 0;
-            }
 
             .navlinks,
             .header-cta .cta-btn {
@@ -1680,50 +1631,73 @@
                 display: none;
             }
 
-            .utility .wrap {
-                padding: 8px 20px;
-                justify-content: center;
+            .prod-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            .utility-social {
-                gap: 14px;
-                font-size: 11.5px;
-                flex-wrap: wrap;
-                justify-content: center;
+            .cat-cards {
+                grid-template-columns: 1fr 1fr;
             }
 
-            nav.wrap {
-                padding: 13px 20px;
-                gap: 14px;
+            .brands-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
 
-            .brand-mark {
-                width: 34px;
-                height: 34px;
+            .cat-scroll {
+                grid-template-columns: repeat(3, 1fr);
             }
 
-            .brand-word {
-                font-size: 16.5px;
+            form.inquiry .row {
+                grid-template-columns: 1fr;
             }
 
-            .header-cta {
-                gap: 8px;
+            .foot-grid {
+                grid-template-columns: 1fr;
             }
 
-            .hero-slider {
-                min-height: auto;
-            }
-
-            .slide {
-                position: relative;
-            }
-
-            .slide:not(.active) {
+            .slider-arrow {
                 display: none;
             }
 
+            .hero-slider {
+                min-height: 680px;
+            }
+
+            .cart-drawer {
+                width: 100%;
+                padding: 22px 18px;
+            }
+        }
+
+        @media (max-width:480px) {
+            .wrap {
+                padding: 0 18px;
+            }
+
+            nav.wrap {
+                padding: 14px 18px;
+                gap: 14px;
+            }
+
+            .brand-word {
+                font-size: 16px;
+            }
+
+            .utility .wrap {
+                padding: 8px 18px;
+            }
+
+            .utility-social {
+                gap: 12px;
+                font-size: 11.5px;
+            }
+
+            .hero-slider {
+                min-height: 600px;
+            }
+
             .slide .wrap {
-                padding: 56px 0 64px;
+                padding: 64px 0 72px;
             }
 
             .slide-copy {
@@ -1731,33 +1705,49 @@
             }
 
             .slide h1 {
-                font-size: clamp(28px, 7vw, 40px);
+                font-size: clamp(28px, 8vw, 38px);
             }
 
             .slide p.lead {
                 font-size: 15px;
+                max-width: none;
+            }
+
+            .slide-actions {
+                gap: 10px;
+            }
+
+            .slide-actions .cta-btn,
+            .slide-actions .btn-ghost {
+                flex: 1 1 auto;
+                justify-content: center;
+                text-align: center;
+            }
+
+            section {
+                padding: 56px 0;
             }
 
             .section-head {
-                margin-bottom: 30px;
+                margin-bottom: 28px;
             }
 
             .section-head h2 {
-                font-size: clamp(22px, 5vw, 30px);
+                font-size: 24px;
             }
 
-            .pop-cats .cat-scroll {
+            .cat-scroll {
                 grid-template-columns: repeat(3, 1fr);
-                gap: 16px 12px;
+                gap: 14px;
             }
 
             .cat-circle .ring {
-                width: 72px;
-                height: 72px;
+                width: 68px;
+                height: 68px;
             }
 
             .cat-circle span {
-                font-size: 11.5px;
+                font-size: 11px;
             }
 
             .prod-grid {
@@ -1769,158 +1759,13 @@
                 padding: 14px;
             }
 
-            .cat-cards {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .cat-card-media {
-                height: 110px;
-            }
-
-            .cat-card-body {
-                padding: 0 18px 4px;
-            }
-
-            .brands-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 10px;
-            }
-
-            .brand-tile {
-                padding: 18px 10px;
-            }
-
-            .brand-logo {
-                font-size: 15.5px;
-            }
-
-            .about-photo {
-                height: 190px;
-            }
-
-            .about-quote {
-                padding-left: 16px;
-                font-size: 19px;
-            }
-
-            .feature {
-                padding: 30px 22px;
-            }
-
-            form.inquiry {
-                padding: 24px 20px;
-            }
-
-            form.inquiry .row {
-                grid-template-columns: 1fr;
-                gap: 14px;
-                margin-bottom: 14px;
-            }
-
-            .promo-strip .wrap {
-                flex-direction: column;
-                align-items: flex-start;
-                text-align: left;
-            }
-
-            .foot-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
-                text-align: left;
-            }
-
-            footer {
-                padding-top: 44px;
-            }
-
-            .foot-bottom {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-
-            .slider-arrow {
-                display: none;
-            }
-
-            .map-wrap iframe {
-                height: 240px;
-            }
-
-            .cart-drawer {
-                width: 100%;
-                padding: 22px 18px;
-            }
-
-            .mobile-menu a,
-            .msub-toggle {
-                padding-left: 20px;
-                padding-right: 20px;
-            }
-
-            .mobile-menu .msub a {
-                padding-left: 34px;
-            }
-        }
-
-        @media (max-width:480px) {
-            .wrap {
-                padding: 0 16px;
-            }
-
-            section {
-                padding: 42px 0;
-            }
-
-            .eyebrow {
-                font-size: 10.5px;
-                margin-bottom: 14px;
-            }
-
-            .slide h1 {
-                font-size: clamp(24px, 8vw, 32px);
-            }
-
-            .slide-actions {
-                gap: 10px;
-            }
-
-            .slide-actions a {
-                font-size: 12.5px;
-                padding: 10px 16px;
-            }
-
-            .pop-cats .cat-scroll {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 14px 8px;
-            }
-
-            .cat-circle .ring {
-                width: 62px;
-                height: 62px;
-            }
-
-            .prod-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
-            }
-
-            .prod-media {
-                height: 120px;
-            }
-
             .prod-body h4 {
                 font-size: 13.5px;
                 min-height: auto;
             }
 
-            .prod-price {
-                font-size: 13px;
-            }
-
-            .prod-cta {
-                padding: 7px 10px;
-                font-size: 11px;
+            .prod-foot {
+                flex-wrap: wrap;
             }
 
             .cat-cards {
@@ -1931,35 +1776,43 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .about-tags {
-                gap: 8px;
+            .about .wrap {
+                gap: 32px;
             }
 
-            .about-tags span {
-                font-size: 11px;
-                padding: 6px 11px;
+            .about-photo {
+                height: 180px;
             }
 
-            .contact-info h2 {
-                margin-bottom: 12px;
+            .about-quote {
+                font-size: 19px;
+                padding-left: 16px;
             }
 
-            .info-row {
-                gap: 12px;
-                margin-bottom: 18px;
+            .contact .wrap {
+                gap: 36px;
             }
 
-            .social-row a {
-                width: 34px;
-                height: 34px;
+            form.inquiry {
+                padding: 22px;
             }
 
-            .megamenu {
-                grid-template-columns: 1fr;
-                min-width: 0;
-                width: calc(100vw - 32px);
-                left: 0;
-                transform: none;
+            .foot-grid {
+                gap: 28px;
+            }
+
+            .promo-strip .wrap {
+                text-align: center;
+                justify-content: center;
+            }
+
+            .promo-strip .wrap>a {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .cart-drawer {
+                padding: 18px 14px;
             }
         }
     </style>
@@ -1978,7 +1831,8 @@
                 <a href="https://www.facebook.com/Dinumusicshop" target="_blank" rel="noopener">Facebook</a>
                 <a href="https://www.youtube.com/channel/UCqOj6ip14NeLqztmG6ZoBpA" target="_blank"
                     rel="noopener">YouTube</a>
-                <a href="https://wa.me/c/94717811388" target="_blank" rel="noopener">WhatsApp</a>
+                <a href="https://wa.me/94717811388?text=Hi!%20I'd%20like%20to%20enquire%20about%20instruments%20at%20Dinu%20Music%20Shop."
+                    target="_blank" rel="noopener">WhatsApp</a>
                 <a href="https://ikman.lk/en/shops/dinu-music-shop" target="_blank" rel="noopener">ikman.lk</a>
             </div>
         </div>
@@ -2067,29 +1921,21 @@
                     </svg>
                     <span class="cart-count" id="cartCount">0</span>
                 </button>
-                <a href="https://wa.me/c/94717811388" target="_blank" rel="noopener" class="cta-btn">Chat on WhatsApp
-                    →</a>
+                <a href="https://wa.me/94717811388?text=Hi!%20I'd%20like%20to%20enquire%20about%20instruments%20at%20Dinu%20Music%20Shop."
+                    target="_blank" rel="noopener" class="cta-btn">Chat on WhatsApp →</a>
             </div>
             <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
         </nav>
 
         <div class="mobile-menu" id="mobileMenu">
             <a href="#home">Home</a>
-            <button class="msub-toggle" id="mSubToggle" aria-expanded="false">Instruments <span
-                    class="mchev"></span></button>
-            <div class="msub" id="mSub">
-                <a href="#catalogue">Guitars & Bass</a>
-                <a href="#catalogue">Keyboards & Piano</a>
-                <a href="#catalogue">Drums & Percussion</a>
-                <a href="#catalogue">Violins</a>
-                <a href="#catalogue">Brass & Wind</a>
-                <a href="#catalogue">Accessories</a>
-            </div>
+            <a href="#catalogue">Instruments</a>
             <a href="#brands">Brands</a>
             <a href="#about">About Us</a>
             <a href="#reviews">Reviews</a>
             <a href="#contact">Contact</a>
-            <a href="https://wa.me/c/94717811388" target="_blank" rel="noopener">Chat on WhatsApp</a>
+            <a href="https://wa.me/94717811388?text=Hi!%20I'd%20like%20to%20enquire%20about%20instruments%20at%20Dinu%20Music%20Shop."
+                target="_blank" rel="noopener">Chat on WhatsApp</a>
         </div>
     </header>
 
@@ -2104,8 +1950,9 @@
         </div>
         <div class="cart-foot">
             <div class="cart-total-row"><span>Estimated Total</span><strong id="cartTotal">Rs. 0</strong></div>
-            <a class="cta-btn cart-checkout" id="cartCheckout" href="https://wa.me/c/94717811388" target="_blank"
-                rel="noopener">Checkout on WhatsApp →</a>
+            <a class="cta-btn cart-checkout" id="cartCheckout"
+                href="https://wa.me/94717811388?text=Hi!%20I'd%20like%20to%20enquire%20about%20instruments%20at%20Dinu%20Music%20Shop."
+                target="_blank" rel="noopener">Checkout on WhatsApp →</a>
             <p class="cart-note">Prices are estimates. We'll confirm final pricing and delivery on WhatsApp.</p>
         </div>
     </aside>
@@ -2136,8 +1983,8 @@
                     <p class="lead">Order from Colombo to Jaffna — every instrument is packed with care and delivered
                         island-wide, no exceptions.</p>
                     <div class="slide-actions">
-                        <a href="https://wa.me/c/94717811388" target="_blank" rel="noopener" class="cta-btn">Order on
-                            WhatsApp</a>
+                        <a href="https://wa.me/94717811388?text=Hi!%20I'd%20like%20to%20place%20an%20order%20and%20get%20it%20delivered."
+                            target="_blank" rel="noopener" class="cta-btn">Order on WhatsApp</a>
                         <a href="#catalogue" class="btn-ghost">See What We Stock</a>
                     </div>
                 </div>
@@ -2153,8 +2000,8 @@
                     <p class="lead">On selectable items, Dinu Music offers its own repair service — because a guarantee
                         should outlast the sale.</p>
                     <div class="slide-actions">
-                        <a href="https://wa.me/c/94717811388" target="_blank" rel="noopener" class="cta-btn">Ask About
-                            Repairs</a>
+                        <a href="https://wa.me/94717811388?text=Hi!%20I%27d%20like%20to%20ask%20about%20instrument%20repairs%20%26%20servicing."
+                            target="_blank" rel="noopener" class="cta-btn">Ask About Repairs</a>
                         <a href="#about" class="btn-ghost">Our Story</a>
                     </div>
                 </div>
@@ -2182,22 +2029,23 @@
             <div class="cat-scroll reveal">
                 <a class="cat-circle" href="#catalogue"><span class="ring"><img
                             src="https://images.unsplash.com/photo-1725152471889-6c59a52e7794?auto=format&fit=crop&w=200&q=70"
-                            alt="Guitars"></span><span>Guitars</span></a>
+                            alt="Guitars" loading="lazy" decoding="async"></span><span>Guitars</span></a>
                 <a class="cat-circle" href="#catalogue"><span class="ring"><img
                             src="https://images.unsplash.com/photo-1543443258-92b04ad5ec6b?auto=format&fit=crop&w=200&q=70"
-                            alt="Drum Sets"></span><span>Drum Sets</span></a>
+                            alt="Drum Sets" loading="lazy" decoding="async"></span><span>Drum Sets</span></a>
                 <a class="cat-circle" href="#catalogue"><span class="ring"><img
                             src="https://images.unsplash.com/photo-1598653222000-6b7b7a552625?auto=format&fit=crop&w=200&q=70"
-                            alt="Keyboards"></span><span>Keyboards</span></a>
+                            alt="Keyboards" loading="lazy" decoding="async"></span><span>Keyboards</span></a>
                 <a class="cat-circle" href="#catalogue"><span class="ring"><img
                             src="https://images.unsplash.com/photo-1664493616579-641af5d19d33?auto=format&fit=crop&w=200&q=70"
-                            alt="Violins"></span><span>Violins</span></a>
+                            alt="Violins" loading="lazy" decoding="async"></span><span>Violins</span></a>
                 <a class="cat-circle" href="#catalogue"><span class="ring"><img
                             src="https://images.unsplash.com/photo-1692303365672-3f04586f5deb?auto=format&fit=crop&w=200&q=70"
-                            alt="Darbuka & Congo hand drums"></span><span>Darbuka & Congo</span></a>
+                            alt="Darbuka & Congo hand drums" loading="lazy" decoding="async"></span><span>Darbuka &
+                        Congo</span></a>
                 <a class="cat-circle" href="#catalogue"><span class="ring"><img
                             src="https://images.unsplash.com/photo-1646054678594-3b36e226e72d?auto=format&fit=crop&w=200&q=70"
-                            alt="Ukulele"></span><span>Ukulele</span></a>
+                            alt="Ukulele" loading="lazy" decoding="async"></span><span>Ukulele</span></a>
             </div>
         </div>
     </section>
@@ -2218,7 +2066,7 @@
                 <div class="prod-card">
                     <div class="prod-media"><span class="prod-tag">In Stock</span><img
                             src="https://images.unsplash.com/photo-1725152471889-6c59a52e7794?auto=format&fit=crop&w=600&q=70"
-                            alt="Acoustic guitars on display"></div>
+                            alt="Acoustic guitars on display" loading="lazy" decoding="async"></div>
                     <div class="prod-body">
                         <div class="vendor">Acoustic Guitars</div>
                         <h4>Full-size Acoustic Guitar, Beginner to Intermediate</h4>
@@ -2231,7 +2079,7 @@
                 <div class="prod-card">
                     <div class="prod-media"><span class="prod-tag">In Stock</span><img
                             src="https://images.unsplash.com/photo-1598653222000-6b7b7a552625?auto=format&fit=crop&w=600&q=70"
-                            alt="Portable electronic keyboard"></div>
+                            alt="Portable electronic keyboard" loading="lazy" decoding="async"></div>
                     <div class="prod-body">
                         <div class="vendor">Yamaha / Casio</div>
                         <h4>Portable Keyboard, 61-Key with Adapter</h4>
@@ -2244,7 +2092,7 @@
                 <div class="prod-card">
                     <div class="prod-media"><span class="prod-tag">In Stock</span><img
                             src="https://images.unsplash.com/photo-1543443258-92b04ad5ec6b?auto=format&fit=crop&w=600&q=70"
-                            alt="Acoustic drum kit"></div>
+                            alt="Acoustic drum kit" loading="lazy" decoding="async"></div>
                     <div class="prod-body">
                         <div class="vendor">Drum Sets</div>
                         <h4>5-Piece Acoustic Drum Kit with Hardware</h4>
@@ -2257,7 +2105,7 @@
                 <div class="prod-card">
                     <div class="prod-media"><span class="prod-tag">In Stock</span><img
                             src="https://images.unsplash.com/photo-1664493616579-641af5d19d33?auto=format&fit=crop&w=600&q=70"
-                            alt="Student violin in case"></div>
+                            alt="Student violin in case" loading="lazy" decoding="async"></div>
                     <div class="prod-body">
                         <div class="vendor">Violins</div>
                         <h4>Student Violin Set with Bow & Case</h4>
@@ -2270,7 +2118,7 @@
                 <div class="prod-card">
                     <div class="prod-media"><span class="prod-tag">In Stock</span><img
                             src="https://images.unsplash.com/photo-1543443258-92b04ad5ec6b?auto=format&fit=crop&w=600&q=70"
-                            alt="Percussion drum equipment"></div>
+                            alt="Percussion drum equipment" loading="lazy" decoding="async"></div>
                     <div class="prod-body">
                         <div class="vendor">Percussion</div>
                         <h4>Cajon Box Drum with Adjustable Snare</h4>
@@ -2283,7 +2131,7 @@
                 <div class="prod-card">
                     <div class="prod-media"><span class="prod-tag">In Stock</span><img
                             src="https://images.unsplash.com/photo-1508186736123-44a5fcb36f9f?auto=format&fit=crop&w=600&q=70"
-                            alt="Electric guitar close up"></div>
+                            alt="Electric guitar close up" loading="lazy" decoding="async"></div>
                     <div class="prod-body">
                         <div class="vendor">Electric Guitars</div>
                         <h4>Electric Guitar & Amplifier Starter Package</h4>
@@ -2296,7 +2144,7 @@
                 <div class="prod-card">
                     <div class="prod-media"><span class="prod-tag">In Stock</span><img
                             src="https://images.unsplash.com/photo-1646054678594-3b36e226e72d?auto=format&fit=crop&w=600&q=70"
-                            alt="Ukulele close up"></div>
+                            alt="Ukulele close up" loading="lazy" decoding="async"></div>
                     <div class="prod-body">
                         <div class="vendor">Ukulele</div>
                         <h4>Concert Ukulele with Padded Gig Bag</h4>
@@ -2309,7 +2157,7 @@
                 <div class="prod-card">
                     <div class="prod-media"><span class="prod-tag">In Stock</span><img
                             src="https://images.unsplash.com/photo-1573871669414-010dbf73ca84?auto=format&fit=crop&w=600&q=70"
-                            alt="Brass trumpet"></div>
+                            alt="Brass trumpet" loading="lazy" decoding="async"></div>
                     <div class="prod-body">
                         <div class="vendor">Brass & Wind</div>
                         <h4>Student Trumpet, Silver-plated Finish</h4>
@@ -2336,45 +2184,49 @@
                 <div class="cat-card">
                     <div class="cat-card-media"><img
                             src="https://images.unsplash.com/photo-1573871669414-010dbf73ca84?auto=format&fit=crop&w=500&q=70"
-                            alt="Brass and wind instruments"></div>
+                            alt="Brass and wind instruments" loading="lazy" decoding="async"></div>
                     <div class="cat-card-body">
                         <h4>Brass & Wind</h4>
                         <p>Trumpet, clarinet, melodica and harmonica for every ensemble.</p>
-                        <a class="shop-now" href="https://wa.me/c/94717811388" target="_blank" rel="noopener">Enquire
-                            Now →</a>
+                        <a class="shop-now"
+                            href="https://wa.me/94717811388?text=Hi!%20I%27d%20like%20to%20enquire%20about%20Brass%20%26%20Wind%20instruments."
+                            target="_blank" rel="noopener">Enquire Now →</a>
                     </div>
                 </div>
                 <div class="cat-card">
                     <div class="cat-card-media"><img
                             src="https://images.unsplash.com/photo-1671108801041-8d3c4f1bed77?auto=format&fit=crop&w=500&q=70"
-                            alt="Kalimba and accessories"></div>
+                            alt="Kalimba and accessories" loading="lazy" decoding="async"></div>
                     <div class="cat-card-body">
                         <h4>Kalimba & Accessories</h4>
                         <p>Kalimbas, strings, cases and accessories for guitars, violins & drums.</p>
-                        <a class="shop-now" href="https://wa.me/c/94717811388" target="_blank" rel="noopener">Enquire
-                            Now →</a>
+                        <a class="shop-now"
+                            href="https://wa.me/94717811388?text=Hi!%20I%27d%20like%20to%20enquire%20about%20Kalimba%20%26%20Accessories."
+                            target="_blank" rel="noopener">Enquire Now →</a>
                     </div>
                 </div>
                 <div class="cat-card">
                     <div class="cat-card-media"><img
                             src="https://images.unsplash.com/photo-1725152471889-6c59a52e7794?auto=format&fit=crop&w=500&q=70"
-                            alt="School instrument sets"></div>
+                            alt="School instrument sets" loading="lazy" decoding="async"></div>
                     <div class="cat-card-body">
                         <h4>School Instruments</h4>
                         <p>Full sets and single items for school bands and music programs.</p>
-                        <a class="shop-now" href="https://wa.me/c/94717811388" target="_blank" rel="noopener">Enquire
-                            Now →</a>
+                        <a class="shop-now"
+                            href="https://wa.me/94717811388?text=Hi!%20I%27d%20like%20to%20enquire%20about%20School%20Instruments."
+                            target="_blank" rel="noopener">Enquire Now →</a>
                     </div>
                 </div>
                 <div class="cat-card">
                     <div class="cat-card-media"><img
                             src="https://images.unsplash.com/photo-1542744989-2a681859d344?auto=format&fit=crop&w=500&q=70"
-                            alt="Guitar amplifier"></div>
+                            alt="Guitar amplifier" loading="lazy" decoding="async"></div>
                     <div class="cat-card-body">
                         <h4>Guitar Amplifiers</h4>
                         <p>Practice and stage amps to pair with any electric or bass guitar.</p>
-                        <a class="shop-now" href="https://wa.me/c/94717811388" target="_blank" rel="noopener">Enquire
-                            Now →</a>
+                        <a class="shop-now"
+                            href="https://wa.me/94717811388?text=Hi!%20I%27d%20like%20to%20enquire%20about%20Guitar%20Amplifiers."
+                            target="_blank" rel="noopener">Enquire Now →</a>
                     </div>
                 </div>
             </div>
@@ -2415,7 +2267,7 @@
             <div class="reveal">
                 <img class="about-photo"
                     src="https://images.unsplash.com/photo-1725152471889-6c59a52e7794?auto=format&fit=crop&w=900&q=70"
-                    alt="Instruments on display at Dinu Music Shop">
+                    alt="Instruments on display at Dinu Music Shop" loading="lazy" decoding="async">
                 <p class="about-quote">"Our vision is to accurately identify your needs and provide you with a more
                     efficient and friendly service."</p>
             </div>
@@ -2544,8 +2396,8 @@
                 <p>Tell us the instrument, your budget, and where you're located — we'll reply with what's in stock and
                     a delivery estimate, no showroom visit required.</p>
             </div>
-            <a href="https://wa.me/c/94717811388" target="_blank" rel="noopener" class="cta-btn">Start a WhatsApp Chat
-                →</a>
+            <a href="https://wa.me/94717811388?text=Hi!%20I'd%20like%20to%20ask%20about%20an%20instrument."
+                target="_blank" rel="noopener" class="cta-btn">Start a WhatsApp Chat →</a>
         </div>
     </section>
 
@@ -2592,7 +2444,8 @@
                         aria-label="Facebook">f</a>
                     <a href="https://www.youtube.com/channel/UCqOj6ip14NeLqztmG6ZoBpA" target="_blank" rel="noopener"
                         aria-label="YouTube">▶</a>
-                    <a href="https://wa.me/c/94717811388" target="_blank" rel="noopener" aria-label="WhatsApp">W</a>
+                    <a href="https://wa.me/94717811388?text=Hi!%20I'd%20like%20to%20enquire%20about%20instruments%20at%20Dinu%20Music%20Shop."
+                        target="_blank" rel="noopener" aria-label="WhatsApp">W</a>
                     <a href="https://ikman.lk/en/shops/dinu-music-shop" target="_blank" rel="noopener"
                         aria-label="ikman.lk">ik</a>
                     <a href="http://g.page/r/CQXoTe06TF9gEAE" target="_blank" rel="noopener"
@@ -2672,7 +2525,8 @@
                     <h5>Connect</h5>
                     <a href="tel:0777697989">0777 69 79 89</a>
                     <a href="mailto:info@dinumusicshop.com">info@dinumusicshop.com</a>
-                    <a href="https://wa.me/c/94717811388" target="_blank" rel="noopener">WhatsApp Us</a>
+                    <a href="https://wa.me/94717811388?text=Hi!%20I'd%20like%20to%20enquire%20about%20instruments%20at%20Dinu%20Music%20Shop."
+                        target="_blank" rel="noopener">WhatsApp Us</a>
                     <a href="https://www.facebook.com/Dinumusicshop" target="_blank" rel="noopener">Facebook</a>
                     <a href="https://www.youtube.com/channel/UCqOj6ip14NeLqztmG6ZoBpA" target="_blank"
                         rel="noopener">YouTube</a>
@@ -2697,15 +2551,6 @@
         toggle.addEventListener('click', () => menu.classList.toggle('open'));
         document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
 
-        // mobile instruments submenu
-        const mSubToggle = document.getElementById('mSubToggle');
-        const mSub = document.getElementById('mSub');
-        mSubToggle.addEventListener('click', () => {
-            mSubToggle.classList.toggle('open');
-            mSub.classList.toggle('open');
-            mSubToggle.setAttribute('aria-expanded', mSub.classList.contains('open'));
-        });
-
         // mega menu (click to open on touch, hover on desktop)
         const prodMenu = document.getElementById('prodMenu');
         prodMenu.querySelector('a').addEventListener('click', (e) => {
@@ -2726,9 +2571,12 @@
             });
         });
         // subtle stagger pop for product & category cards
+        // (grids also carry the .reveal class for their own fade-in above, so here we
+        // only animate y/scale on the children — opacity is left to the parent's
+        // .reveal tween to avoid a double-fade stutter)
         gsap.utils.toArray('.prod-grid, .cat-cards, .cat-scroll, .showcase-grid, .update-grid, .brands-grid').forEach(grid => {
-            gsap.fromTo(grid.children, { opacity: 0, y: 22, scale: .97 }, {
-                opacity: 1, y: 0, scale: 1, duration: .6, ease: 'power2.out', stagger: 0.07,
+            gsap.fromTo(grid.children, { y: 22, scale: .97 }, {
+                y: 0, scale: 1, duration: .6, ease: 'power2.out', stagger: 0.07,
                 scrollTrigger: { trigger: grid, start: 'top 85%' }
             });
         });
@@ -2736,22 +2584,32 @@
         // ---------- hero slider (GSAP crossfade + staggered copy) ----------
         const slides = document.querySelectorAll('.slide');
         const dots = document.querySelectorAll('.slider-nav button');
-        let current = 0, timer;
+        const heroSlider = document.querySelector('.hero-slider');
+        let current = 0, timer, isAnimating = false;
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
         function animateCopy(slide) {
             const copy = slide.querySelector('.slide-copy');
             if (!copy) return;
             const targets = copy.querySelectorAll('.eyebrow, h1, p.lead, .slide-actions');
+            gsap.killTweensOf(targets);
             gsap.fromTo(targets, { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: .7, ease: 'power3.out', stagger: 0.1, delay: .15 });
         }
 
         function goTo(i) {
+            if (isAnimating) return; // guard against overlapping transitions from rapid clicks
+            const nextIndex = (i + slides.length) % slides.length;
+            if (nextIndex === current) return;
             const prevSlide = slides[current];
-            current = (i + slides.length) % slides.length;
-            const nextSlide = slides[current];
-            if (prevSlide !== nextSlide) {
-                gsap.to(prevSlide, { opacity: 0, duration: .5, ease: 'power1.out', onComplete: () => prevSlide.classList.remove('active') });
-            }
+            const nextSlide = slides[nextIndex];
+            current = nextIndex;
+            isAnimating = true;
+
+            gsap.killTweensOf([prevSlide, nextSlide]);
+            gsap.to(prevSlide, {
+                opacity: 0, duration: .5, ease: 'power1.out',
+                onComplete: () => { prevSlide.classList.remove('active'); isAnimating = false; }
+            });
             nextSlide.classList.add('active');
             gsap.fromTo(nextSlide, { opacity: 0 }, { opacity: 1, duration: .7, ease: 'power1.out' });
             dots.forEach(d => d.classList.remove('active'));
@@ -2760,11 +2618,33 @@
         }
         function next() { goTo(current + 1); }
         function prev() { goTo(current - 1); }
-        function startAuto() { timer = setInterval(next, 6000); }
+        function startAuto() { if (reduceMotion) return; stopAuto(); timer = setInterval(next, 6000); }
         function stopAuto() { clearInterval(timer); }
-        dots.forEach((d, i) => d.addEventListener('click', () => { goTo(i); stopAuto(); startAuto(); }));
-        document.getElementById('nextBtn').addEventListener('click', () => { next(); stopAuto(); startAuto(); });
-        document.getElementById('prevBtn').addEventListener('click', () => { prev(); stopAuto(); startAuto(); });
+        dots.forEach((d, i) => d.addEventListener('click', () => { goTo(i); startAuto(); }));
+        document.getElementById('nextBtn').addEventListener('click', () => { next(); startAuto(); });
+        document.getElementById('prevBtn').addEventListener('click', () => { prev(); startAuto(); });
+
+        // pause autoplay on hover/focus, and when the tab is hidden
+        if (heroSlider) {
+            heroSlider.addEventListener('mouseenter', stopAuto);
+            heroSlider.addEventListener('mouseleave', startAuto);
+            heroSlider.addEventListener('focusin', stopAuto);
+            heroSlider.addEventListener('focusout', startAuto);
+
+            // basic swipe support on touch devices
+            let touchStartX = 0;
+            heroSlider.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].clientX; }, { passive: true });
+            heroSlider.addEventListener('touchend', e => {
+                const dx = e.changedTouches[0].clientX - touchStartX;
+                if (Math.abs(dx) < 40) return;
+                dx < 0 ? next() : prev();
+                startAuto();
+            }, { passive: true });
+        }
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) stopAuto(); else startAuto();
+        });
+
         animateCopy(slides[0]);
         startAuto();
 
@@ -2793,7 +2673,7 @@
                     const row = document.createElement('div');
                     row.className = 'cart-item';
                     row.innerHTML = `
-          <img src="${item.img}" alt="${item.name}">
+          <img src="${item.img}" alt="${item.name}" loading="lazy" decoding="async">
           <div class="cart-item-body">
             <h5>${item.name}</h5>
             <div class="cart-item-price">${fmt(item.price)} × ${item.qty}</div>
