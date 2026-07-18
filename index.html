@@ -1,0 +1,2566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinu Music Shop — Life Time Music</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500&family=Manrope:wght@400;500;600;700;800&family=Mrs+Saint+Delafield&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fbf7f0;
+            --bg-soft: #f4ecdf;
+            --bg-card: #ffffff;
+            --bg-card-hi: #fdf6e9;
+            --hairline: rgba(168, 118, 58, 0.22);
+            --gold-hi: #b9822f;
+            --gold-lo: #8a5a24;
+            --magenta: #d81a72;
+            --amber: #e8752c;
+            --ink: #2c1e15;
+            --ink-muted: #6e5a4c;
+            --ink-faint: #8a7364;
+            --radius: 3px;
+            --maxw: 1240px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--ink);
+            font-family: 'Manrope', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            line-height: 1.1;
+        }
+
+        .script {
+            font-family: 'Mrs Saint Delafield', cursive;
+            font-weight: 400;
+            background: linear-gradient(100deg, var(--magenta) 0%, var(--amber) 45%, var(--gold-hi) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img,
+        svg {
+            max-width: 100%;
+            display: block;
+        }
+
+        .wrap {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        ::selection {
+            background: var(--gold-hi);
+            color: #1a0f0f;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* ============ UTILITY BAR ============ */
+        .utility {
+            background: var(--ink);
+            border-bottom: 1px solid var(--hairline);
+            font-size: 12.5px;
+            color: #d8c7b6;
+        }
+
+        .utility .wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 9px 32px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .utility-left {
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .utility a:hover {
+            color: var(--gold-hi);
+        }
+
+        .utility-social {
+            display: flex;
+            gap: 16px;
+        }
+
+        .badge-hours {
+            color: var(--gold-hi);
+            font-weight: 700;
+        }
+
+        /* ============ HEADER ============ */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 60;
+            background: rgba(251, 247, 240, 0.92);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--hairline);
+            box-shadow: 0 1px 0 rgba(168, 118, 58, 0.06);
+        }
+
+        nav.wrap {
+            display: flex;
+            align-items: center;
+            gap: 34px;
+            padding: 16px 32px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-right: auto;
+        }
+
+        .brand-mark {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+        }
+
+        .brand-word {
+            font-family: 'Fraunces', serif;
+            font-size: 19px;
+            font-weight: 700;
+            letter-spacing: .02em;
+            color: var(--ink);
+            white-space: nowrap;
+        }
+
+        .brand-word b {
+            background: linear-gradient(120deg, var(--gold-lo), var(--gold-hi));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .navlinks {
+            display: flex;
+            gap: 30px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .navlinks>li {
+            position: relative;
+        }
+
+        .navlinks>li>a {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 10px 0;
+            color: var(--ink-muted);
+            transition: color .2s;
+        }
+
+        .navlinks>li>a:hover,
+        .navlinks>li.open>a {
+            color: var(--gold-hi);
+        }
+
+        .navlinks .chev {
+            width: 9px;
+            height: 9px;
+            border-right: 1.5px solid currentColor;
+            border-bottom: 1.5px solid currentColor;
+            transform: rotate(45deg);
+            margin-top: -3px;
+            transition: transform .2s;
+        }
+
+        .navlinks>li.open .chev {
+            transform: rotate(225deg);
+            margin-top: 3px;
+        }
+
+        .megamenu {
+            position: absolute;
+            top: calc(100% + 14px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-card);
+            border: 1px solid var(--hairline);
+            border-radius: var(--radius);
+            padding: 22px;
+            display: none;
+            grid-template-columns: repeat(2, 220px);
+            gap: 4px;
+            box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.6);
+        }
+
+        .navlinks>li.open .megamenu {
+            display: grid;
+        }
+
+        .megamenu a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 12px;
+            border-radius: var(--radius);
+            color: var(--ink-muted);
+            font-size: 13.5px;
+            font-weight: 600;
+            transition: background .2s, color .2s;
+        }
+
+        .megamenu a:hover {
+            background: rgba(242, 193, 78, 0.08);
+            color: var(--gold-hi);
+        }
+
+        .megamenu .micon {
+            width: 30px;
+            height: 30px;
+            flex-shrink: 0;
+            border-radius: 9px;
+            background: linear-gradient(150deg, rgba(242, 193, 78, 0.16), rgba(184, 130, 47, 0.08));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .megamenu svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            color: var(--gold-hi);
+        }
+
+        .header-cta {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .cart-btn {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 1px solid var(--hairline);
+            background: var(--bg-card);
+            color: var(--ink);
+            cursor: pointer;
+            transition: border-color .2s, transform .2s;
+        }
+
+        .cart-btn:hover {
+            border-color: var(--gold-hi);
+            transform: translateY(-1px);
+        }
+
+        .cart-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            min-width: 18px;
+            height: 18px;
+            padding: 0 4px;
+            border-radius: 9px;
+            background: var(--magenta);
+            color: #fff;
+            font-size: 10.5px;
+            font-weight: 800;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            display: none;
+        }
+
+        .cart-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(24, 15, 10, .45);
+            z-index: 90;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .3s ease;
+        }
+
+        .cart-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .cart-drawer {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 380px;
+            max-width: 92vw;
+            background: var(--bg-card);
+            z-index: 95;
+            box-shadow: -24px 0 48px -20px rgba(24, 15, 10, .35);
+            display: flex;
+            flex-direction: column;
+            transform: translateX(100%);
+            padding: 26px 24px;
+        }
+
+        .cart-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--hairline);
+            margin-bottom: 6px;
+        }
+
+        .cart-head h3 {
+            font-size: 19px;
+            color: var(--ink);
+        }
+
+        .cart-close {
+            background: none;
+            border: none;
+            font-size: 16px;
+            color: var(--ink-muted);
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            transition: background .2s;
+        }
+
+        .cart-close:hover {
+            background: var(--bg-soft);
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 14px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .cart-empty {
+            color: var(--ink-faint);
+            font-size: 13.5px;
+            line-height: 1.6;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .cart-item img {
+            width: 52px;
+            height: 52px;
+            border-radius: var(--radius);
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .cart-item-body {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .cart-item-body h5 {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 3px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .cart-item-body .cart-item-price {
+            font-size: 12.5px;
+            color: var(--ink-muted);
+        }
+
+        .cart-item-qty {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cart-item-qty button {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            border: 1px solid var(--hairline);
+            background: var(--bg-soft);
+            color: var(--ink);
+            cursor: pointer;
+            font-size: 13px;
+            line-height: 1;
+        }
+
+        .cart-item-qty span {
+            font-size: 13px;
+            font-weight: 700;
+            min-width: 14px;
+            text-align: center;
+        }
+
+        .cart-item-remove {
+            background: none;
+            border: none;
+            color: var(--ink-faint);
+            cursor: pointer;
+            font-size: 12px;
+            margin-left: 6px;
+        }
+
+        .cart-item-remove:hover {
+            color: var(--magenta);
+        }
+
+        .cart-foot {
+            border-top: 1px solid var(--hairline);
+            padding-top: 18px;
+        }
+
+        .cart-total-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+            font-size: 14.5px;
+            color: var(--ink);
+        }
+
+        .cart-total-row strong {
+            font-size: 18px;
+        }
+
+        .cart-checkout {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .cart-note {
+            font-size: 11.5px;
+            color: var(--ink-faint);
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .fly-thumb {
+            position: fixed;
+            z-index: 120;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            object-fit: cover;
+            pointer-events: none;
+            box-shadow: 0 8px 20px -6px rgba(24, 15, 10, .4);
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(120deg, var(--gold-lo), var(--gold-hi));
+            color: #1a0f0f;
+            font-weight: 700;
+            font-size: 13.5px;
+            padding: 11px 20px;
+            border-radius: var(--radius);
+            box-shadow: 0 6px 22px -8px rgba(242, 193, 78, 0.5);
+            transition: transform .2s, box-shadow .2s;
+            white-space: nowrap;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 26px -6px rgba(242, 193, 78, 0.65);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--ink);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background: var(--bg-soft);
+            border-bottom: 1px solid var(--hairline);
+            max-height: 75vh;
+            overflow-y: auto;
+        }
+
+        .mobile-menu.open {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            padding: 15px 32px;
+            border-top: 1px solid var(--hairline);
+            font-weight: 600;
+            color: var(--ink-muted);
+            font-size: 14.5px;
+        }
+
+        .mobile-menu .msub a {
+            padding-left: 48px;
+            font-size: 13.5px;
+            color: var(--ink-faint);
+        }
+
+        /* ============ HERO SLIDER ============ */
+        .hero-slider {
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid var(--hairline);
+            min-height: 560px;
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1;
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+            z-index: 2;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: linear-gradient(100deg, rgba(20, 13, 8, .82) 0%, rgba(20, 13, 8, .62) 34%, rgba(20, 13, 8, .22) 62%, rgba(20, 13, 8, .05) 100%);
+        }
+
+        .slide-1 {
+            background-image: url('https://images.unsplash.com/photo-1725152471889-6c59a52e7794?auto=format&fit=crop&w=1600&q=70');
+        }
+
+        .slide-2 {
+            background-image: url('https://images.unsplash.com/photo-1598653222000-6b7b7a552625?auto=format&fit=crop&w=1600&q=70');
+        }
+
+        .slide-3 {
+            background-image: url('https://images.unsplash.com/photo-1543443258-92b04ad5ec6b?auto=format&fit=crop&w=1600&q=70');
+        }
+
+        .slide .wrap {
+            position: relative;
+            padding: 88px 0 96px;
+        }
+
+        .slide-copy {
+            max-width: 560px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            color: var(--gold-hi);
+            margin-bottom: 20px;
+        }
+
+        .eyebrow::before {
+            content: '';
+            width: 24px;
+            height: 1px;
+            background: var(--gold-hi);
+        }
+
+        .slide h1 {
+            font-size: clamp(34px, 4.6vw, 54px);
+            color: #fdf8ef;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, .25);
+        }
+
+        .slide p.lead {
+            font-size: 16.5px;
+            color: #e6dbcc;
+            max-width: 44ch;
+            margin-bottom: 30px;
+        }
+
+        .slide-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(253, 248, 239, .4);
+            color: #fdf8ef;
+            font-weight: 600;
+            font-size: 13.5px;
+            padding: 11px 20px;
+            border-radius: var(--radius);
+            transition: border-color .2s, background .2s;
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--gold-hi);
+            background: rgba(253, 248, 239, .08);
+        }
+
+        .slider-nav {
+            position: absolute;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 9px;
+            z-index: 5;
+        }
+
+        .slider-nav button {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255, 255, 255, .55);
+            cursor: pointer;
+            transition: background .25s, width .25s;
+        }
+
+        .slider-nav button.active {
+            background: var(--gold-hi);
+            width: 22px;
+            border-radius: 4px;
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, .5);
+            background: rgba(44, 30, 21, .35);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 5;
+            transition: border-color .2s, color .2s;
+            backdrop-filter: blur(3px);
+        }
+
+        .slider-arrow:hover {
+            border-color: var(--gold-hi);
+            color: var(--gold-hi);
+        }
+
+        .slider-arrow.prev {
+            left: 20px;
+        }
+
+        .slider-arrow.next {
+            right: 20px;
+        }
+
+        /* ============ SECTION SHELL ============ */
+        section {
+            padding: 88px 0;
+        }
+
+        .section-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 24px;
+            margin-bottom: 44px;
+            flex-wrap: wrap;
+        }
+
+        .section-head h2 {
+            font-size: clamp(26px, 3vw, 36px);
+            color: var(--ink);
+        }
+
+        .section-head p {
+            color: var(--ink-muted);
+            margin-top: 10px;
+            font-size: 15px;
+            max-width: 52ch;
+        }
+
+        .section-head .see-all {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--gold-hi);
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .section-head .see-all:hover {
+            text-decoration: underline;
+        }
+
+        /* ============ POPULAR CATEGORIES (circular, We Love Music style) ============ */
+        .pop-cats {
+            border-bottom: 1px solid var(--hairline);
+            background: var(--bg-soft);
+        }
+
+        .cat-scroll {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+        }
+
+        .cat-circle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            text-align: center;
+        }
+
+        .cat-circle .ring {
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            border: 1px solid var(--hairline);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: border-color .25s, transform .25s, box-shadow .25s;
+        }
+
+        .cat-circle:hover .ring {
+            border-color: var(--gold-hi);
+            transform: translateY(-3px);
+            box-shadow: 0 14px 26px -14px rgba(184, 130, 47, .5);
+        }
+
+        .cat-circle .ring img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .4s ease;
+        }
+
+        .cat-circle:hover .ring img {
+            transform: scale(1.08);
+        }
+
+        .cat-circle span {
+            font-size: 12.5px;
+            font-weight: 700;
+            color: var(--ink-muted);
+        }
+
+        /* ============ PRODUCT-STYLE CARDS ============ */
+        .prod-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .prod-card {
+            background: var(--bg-card);
+            border: 1px solid var(--hairline);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: border-color .25s, transform .25s;
+        }
+
+        .prod-card:hover {
+            border-color: var(--gold-hi);
+            transform: translateY(-3px);
+        }
+
+        .prod-media {
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: var(--bg-soft);
+            border-bottom: 1px solid var(--hairline);
+        }
+
+        .prod-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .4s ease;
+        }
+
+        .prod-card:hover .prod-media img {
+            transform: scale(1.06);
+        }
+
+        .prod-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            background: rgba(44, 30, 21, .72);
+            color: #f4ecdf;
+            border: 1px solid rgba(255, 255, 255, .18);
+            padding: 4px 8px;
+            border-radius: 20px;
+        }
+
+        .prod-body {
+            padding: 18px;
+        }
+
+        .prod-body .vendor {
+            font-size: 11px;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--ink-faint);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .prod-body h4 {
+            font-size: 15px;
+            font-weight: 600;
+            font-family: 'Manrope', sans-serif;
+            color: var(--ink);
+            margin-bottom: 10px;
+            line-height: 1.35;
+            min-height: 40px;
+        }
+
+        .prod-foot {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .prod-price {
+            font-size: 14.5px;
+            color: var(--ink);
+            font-weight: 800;
+        }
+
+        .prod-cta {
+            font-size: 12px;
+            font-weight: 800;
+            color: #fff;
+            background: linear-gradient(120deg, var(--gold-lo), var(--gold-hi));
+            border: none;
+            padding: 9px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: transform .2s, box-shadow .2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .prod-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 18px -8px rgba(184, 130, 47, .6);
+        }
+
+        .prod-cta.added {
+            background: linear-gradient(120deg, #4c8f5c, #6bb37c);
+        }
+
+        /* ============ CATEGORY SHOWCASE (Infinite style shop-now cards) ============ */
+        .cat-showcase {
+            background: var(--bg-soft);
+            border-top: 1px solid var(--hairline);
+            border-bottom: 1px solid var(--hairline);
+        }
+
+        .cat-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: var(--hairline);
+            border: 1px solid var(--hairline);
+        }
+
+        .cat-card {
+            background: var(--bg-card);
+            padding: 0 0 26px;
+            position: relative;
+            transition: background .25s;
+            overflow: hidden;
+        }
+
+        .cat-card:hover {
+            background: var(--bg-card-hi);
+        }
+
+        .cat-card-media {
+            height: 132px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .cat-card-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .4s ease;
+        }
+
+        .cat-card:hover .cat-card-media img {
+            transform: scale(1.06);
+        }
+
+        .cat-card-body {
+            padding: 0 26px;
+        }
+
+        .cat-card h4 {
+            font-size: 16px;
+            color: var(--ink);
+            margin-bottom: 6px;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+        }
+
+        .cat-card p {
+            font-size: 12.5px;
+            color: var(--ink-faint);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .shop-now {
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .03em;
+            color: var(--gold-hi);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .shop-now:hover {
+            text-decoration: underline;
+        }
+
+        /* ============ BRANDS GRID ============ */
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 14px;
+        }
+
+        .brand-tile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: var(--bg-card);
+            border: 1px solid var(--hairline);
+            border-radius: var(--radius);
+            padding: 26px 14px;
+            text-align: center;
+            transition: border-color .25s, transform .25s, box-shadow .25s;
+        }
+
+        .brand-tile:hover {
+            border-color: var(--gold-hi);
+            transform: translateY(-2px);
+            box-shadow: 0 14px 26px -16px rgba(184, 130, 47, .5);
+        }
+
+        .brand-logo {
+            font-family: 'Fraunces', serif;
+            font-weight: 800;
+            letter-spacing: -0.01em;
+            font-size: 19px;
+            color: var(--ink);
+        }
+
+        .brand-logo em {
+            font-style: normal;
+            color: var(--gold-hi);
+        }
+
+        .brand-tile .brand-sub {
+            font-family: 'Manrope', sans-serif;
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--ink-faint);
+        }
+
+        .brand-tile .brand-rule {
+            width: 26px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold-lo), var(--gold-hi));
+            border-radius: 2px;
+        }
+
+        /* ============ ABOUT / WELCOME ============ */
+        .about {
+            background: var(--bg-soft);
+            border-top: 1px solid var(--hairline);
+            border-bottom: 1px solid var(--hairline);
+        }
+
+        .about .wrap {
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            gap: 64px;
+            align-items: start;
+        }
+
+        .about-photo {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            margin-bottom: 26px;
+            box-shadow: 0 18px 40px -20px rgba(44, 30, 21, .35);
+        }
+
+        .about-quote {
+            font-family: 'Fraunces', serif;
+            font-style: italic;
+            font-weight: 500;
+            font-size: clamp(21px, 2.2vw, 26px);
+            color: var(--ink);
+            line-height: 1.4;
+            border-left: 2px solid var(--gold-hi);
+            padding-left: 22px;
+        }
+
+        .about-body p {
+            color: var(--ink-muted);
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+
+        .about-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 22px;
+        }
+
+        .about-tags span {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--ink-muted);
+            border: 1px solid var(--hairline);
+            padding: 7px 13px;
+            border-radius: 20px;
+        }
+
+        /* ============ FEATURES ============ */
+        .features .wrap {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--hairline);
+            border: 1px solid var(--hairline);
+        }
+
+        .feature {
+            background: var(--bg);
+            padding: 40px 34px;
+        }
+
+        .feature .fnum {
+            font-family: 'Fraunces', serif;
+            font-size: 12.5px;
+            color: var(--gold-hi);
+            letter-spacing: .1em;
+            margin-bottom: 18px;
+            display: block;
+        }
+
+        .feature h3 {
+            font-size: 20px;
+            color: var(--ink);
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            color: var(--ink-muted);
+            font-size: 14px;
+        }
+
+        /* ============ REVIEWS ============ */
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 26px;
+        }
+
+        .showcase-card {
+            background: var(--bg-card);
+            border: 1px solid var(--hairline);
+            padding: 32px 28px;
+            border-radius: var(--radius);
+        }
+
+        .showcase-card .quote-mark {
+            font-family: 'Fraunces', serif;
+            font-size: 46px;
+            color: var(--gold-hi);
+            opacity: .5;
+            line-height: .4;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .showcase-card p {
+            color: var(--ink-muted);
+            font-size: 14.5px;
+            margin-bottom: 18px;
+        }
+
+        .showcase-card .who {
+            font-size: 13px;
+            color: var(--ink);
+            font-weight: 700;
+        }
+
+        .showcase-card .role {
+            font-size: 12px;
+            color: var(--ink-faint);
+        }
+
+        /* ============ UPDATES / SOCIAL ============ */
+        .updates {
+            background: var(--bg-soft);
+            border-top: 1px solid var(--hairline);
+            border-bottom: 1px solid var(--hairline);
+        }
+
+        .update-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .update-card {
+            background: var(--bg-card);
+            border: 1px solid var(--hairline);
+            border-radius: var(--radius);
+            padding: 28px;
+            transition: border-color .25s, transform .25s;
+        }
+
+        .update-card:hover {
+            border-color: var(--gold-hi);
+            transform: translateY(-3px);
+        }
+
+        .update-card svg {
+            width: 26px;
+            height: 26px;
+            color: var(--gold-hi);
+            margin-bottom: 16px;
+        }
+
+        .update-card h4 {
+            font-size: 16px;
+            color: var(--ink);
+            margin-bottom: 8px;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+        }
+
+        .update-card p {
+            font-size: 13.5px;
+            color: var(--ink-muted);
+            margin-bottom: 16px;
+        }
+
+        .update-card .go {
+            font-size: 12.5px;
+            font-weight: 800;
+            color: var(--gold-hi);
+        }
+
+        /* ============ WHATSAPP PROMO STRIP ============ */
+        .promo-strip {
+            background: linear-gradient(120deg, #f2e2c4, #f8eeda);
+            border-top: 1px solid var(--hairline);
+            border-bottom: 1px solid var(--hairline);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .promo-strip::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 500px 300px at 85% 50%, rgba(184, 33, 122, .08), transparent 70%);
+        }
+
+        .promo-strip .wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        .promo-strip h3 {
+            font-size: clamp(22px, 2.6vw, 30px);
+            color: var(--ink);
+            max-width: 520px;
+        }
+
+        .promo-strip p {
+            color: var(--ink-muted);
+            margin-top: 8px;
+            font-size: 14.5px;
+            max-width: 480px;
+        }
+
+        /* ============ CONTACT ============ */
+        .contact {
+            background: var(--bg);
+            border-bottom: 1px solid var(--hairline);
+        }
+
+        .contact .wrap {
+            display: grid;
+            grid-template-columns: .85fr 1.15fr;
+            gap: 64px;
+        }
+
+        .contact-info h2 {
+            font-size: clamp(24px, 2.8vw, 34px);
+            margin-bottom: 16px;
+        }
+
+        .contact-info p {
+            color: var(--ink-muted);
+            margin-bottom: 28px;
+            max-width: 42ch;
+        }
+
+        .info-row {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            margin-bottom: 24px;
+        }
+
+        .info-row .ic {
+            width: 19px;
+            height: 19px;
+            color: var(--gold-hi);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .info-row .t {
+            font-size: 11.5px;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--ink-faint);
+            margin-bottom: 3px;
+        }
+
+        .info-row .v {
+            font-size: 14.5px;
+            color: var(--ink);
+            font-weight: 600;
+        }
+
+        .info-row .v a:hover {
+            color: var(--gold-hi);
+        }
+
+        .social-row {
+            display: flex;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .social-row a {
+            width: 38px;
+            height: 38px;
+            border: 1px solid var(--hairline);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--ink-muted);
+            font-size: 13px;
+            font-weight: 700;
+            transition: all .25s;
+        }
+
+        .social-row a:hover {
+            border-color: var(--gold-hi);
+            color: var(--gold-hi);
+            transform: translateY(-2px);
+        }
+
+        form.inquiry {
+            background: var(--bg-card);
+            border: 1px solid var(--hairline);
+            padding: 36px;
+            border-radius: var(--radius);
+        }
+
+        form.inquiry .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .field label {
+            font-size: 11.5px;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--ink-faint);
+            font-weight: 700;
+        }
+
+        .field input,
+        .field textarea {
+            background: var(--bg-soft);
+            border: 1px solid var(--hairline);
+            color: var(--ink);
+            padding: 12px 13px;
+            font-family: 'Manrope', sans-serif;
+            font-size: 14px;
+            border-radius: var(--radius);
+            transition: border-color .25s;
+        }
+
+        .field input:focus,
+        .field textarea:focus {
+            outline: none;
+            border-color: var(--gold-hi);
+        }
+
+        .field textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .full {
+            grid-column: 1/-1;
+        }
+
+        .submit-btn {
+            width: 100%;
+            margin-top: 4px;
+            border: none;
+            cursor: pointer;
+            background: linear-gradient(120deg, var(--gold-lo), var(--gold-hi));
+            color: #1a0f0f;
+            font-weight: 700;
+            font-size: 14.5px;
+            padding: 14px;
+            border-radius: var(--radius);
+            transition: transform .25s, box-shadow .25s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 28px -8px rgba(242, 193, 78, .5);
+        }
+
+        .map-wrap {
+            border-bottom: 1px solid var(--hairline);
+        }
+
+        .map-wrap iframe {
+            width: 100%;
+            height: 320px;
+            border: 0;
+            filter: grayscale(.3) contrast(1.1) brightness(.85);
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            background: var(--bg-soft);
+            padding-top: 64px;
+            border-top: 1px solid var(--hairline);
+        }
+
+        .foot-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 44px;
+            border-bottom: 1px solid var(--hairline);
+        }
+
+        .foot-brand-block .brand {
+            margin-bottom: 16px;
+        }
+
+        .foot-brand-block p {
+            color: var(--ink-faint);
+            font-size: 13.5px;
+            max-width: 34ch;
+            margin-bottom: 18px;
+        }
+
+        .foot-col h5 {
+            font-size: 12px;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--gold-hi);
+            margin-bottom: 18px;
+            font-weight: 800;
+        }
+
+        .foot-col a {
+            display: block;
+            color: var(--ink-faint);
+            font-size: 13.5px;
+            margin-bottom: 12px;
+            transition: color .2s;
+        }
+
+        .foot-col a:hover {
+            color: var(--gold-hi);
+        }
+
+        .foot-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            padding: 26px 0;
+        }
+
+        .foot-bottom p {
+            font-size: 12.5px;
+            color: var(--ink-faint);
+        }
+
+        .foot-bottom .flinks {
+            display: flex;
+            gap: 20px;
+            font-size: 12.5px;
+            color: var(--ink-faint);
+        }
+
+        .foot-bottom .flinks a:hover {
+            color: var(--gold-hi);
+        }
+
+        .reveal {
+            opacity: 0;
+        }
+
+        .reveal.in {
+            opacity: 1;
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width:1080px) {
+            .prod-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .cat-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .brands-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .cat-scroll {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .foot-grid {
+                grid-template-columns: 1.2fr 1fr 1fr;
+            }
+        }
+
+        @media (max-width:980px) {
+            .hero-slider {
+                min-height: 640px;
+            }
+
+            .about .wrap {
+                grid-template-columns: 1fr;
+            }
+
+            .features .wrap {
+                grid-template-columns: 1fr;
+            }
+
+            .showcase-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .update-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact .wrap {
+                grid-template-columns: 1fr;
+            }
+
+            .foot-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width:760px) {
+
+            .navlinks,
+            .header-cta .cta-btn {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .utility-left {
+                display: none;
+            }
+
+            .prod-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cat-cards {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .brands-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .cat-scroll {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            form.inquiry .row {
+                grid-template-columns: 1fr;
+            }
+
+            .foot-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .slider-arrow {
+                display: none;
+            }
+
+            .hero-slider {
+                min-height: 680px;
+            }
+
+            .cart-drawer {
+                width: 100%;
+                padding: 22px 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="utility">
+        <div class="wrap">
+            <div class="utility-left">
+                <a href="tel:0777697989">📞 0777 69 79 89</a>
+                <a href="mailto:info@dinumusicshop.com">info@dinumusicshop.com</a>
+                <span class="badge-hours">Open Today · Island-wide delivery</span>
+            </div>
+            <div class="utility-social">
+                <a href="https://www.facebook.com/Dinumusicshop" target="_blank" rel="noopener">Facebook</a>
+                <a href="https://www.youtube.com/channel/UCqOj6ip14NeLqztmG6ZoBpA" target="_blank"
+                    rel="noopener">YouTube</a>
+                <a href="https://wa.me/c/94717811388" target="_blank" rel="noopener">WhatsApp</a>
+                <a href="https://ikman.lk/en/shops/dinu-music-shop" target="_blank" rel="noopener">ikman.lk</a>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <nav class="wrap">
+            <a href="#" class="brand">
+                <svg class="brand-mark" viewBox="0 0 100 100" fill="none">
+                    <circle cx="50" cy="50" r="46" stroke="url(#navGrad)" stroke-width="4" />
+                    <path d="M56 18 C40 26, 34 40, 44 50 C56 62, 64 74, 50 82 C40 88, 30 82, 32 72"
+                        stroke="url(#navGrad2)" stroke-width="6" fill="none" stroke-linecap="round" />
+                    <circle cx="33" cy="76" r="6" fill="url(#navGrad2)" />
+                    <defs>
+                        <linearGradient id="navGrad" x1="0" y1="0" x2="100" y2="100">
+                            <stop stop-color="#f2c14e" />
+                            <stop offset="1" stop-color="#a8763a" />
+                        </linearGradient>
+                        <linearGradient id="navGrad2" x1="30" y1="18" x2="60" y2="82">
+                            <stop stop-color="#e0217a" />
+                            <stop offset="1" stop-color="#ff8a3d" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="brand-word"><b>DINU</b> music</span>
+            </a>
+
+            <ul class="navlinks">
+                <li><a href="#home">Home</a></li>
+                <li class="has-mega" id="prodMenu">
+                    <a href="#catalogue">Instruments <span class="chev"></span></a>
+                    <div class="megamenu">
+                        <a href="#catalogue"><span class="micon"><svg viewBox="0 0 24 24" fill="currentColor">
+                                    <rect x="10.3" y="1.6" width="1.4" height="9.4" rx="0.7" />
+                                    <rect x="9.2" y="0.8" width="3.6" height="2.2" rx="0.7" />
+                                    <circle cx="11" cy="16" r="5.6" />
+                                    <circle cx="11" cy="16" r="1.9" fill="var(--bg-card)" />
+                                </svg></span>Guitars & Bass</a>
+                        <a href="#catalogue"><span class="micon"><svg viewBox="0 0 24 24" fill="currentColor">
+                                    <rect x="2" y="8" width="20" height="9.5" rx="1.3" />
+                                    <rect x="4.3" y="8" width="1.7" height="5.5" fill="var(--bg-card)" />
+                                    <rect x="7.4" y="8" width="1.7" height="5.5" fill="var(--bg-card)" />
+                                    <rect x="10.5" y="8" width="1.7" height="5.5" fill="var(--bg-card)" />
+                                    <rect x="13.6" y="8" width="1.7" height="5.5" fill="var(--bg-card)" />
+                                    <rect x="16.7" y="8" width="1.7" height="5.5" fill="var(--bg-card)" />
+                                    <rect x="19.8" y="8" width="1.7" height="5.5" fill="var(--bg-card)" />
+                                </svg></span>Keyboards & Piano</a>
+                        <a href="#catalogue"><span class="micon"><svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M3.3 12.3l4.6-2.7 8.2 4.7-4.6 2.7z" />
+                                    <path d="M12.1 14.3l4.6-2.7 4 2.3-4.6 2.7z" opacity="0.65" />
+                                    <rect x="5" y="12" width="1.6" height="6" rx="0.6" />
+                                    <rect x="16.4" y="14" width="1.6" height="6" rx="0.6" opacity="0.65" />
+                                </svg></span>Drums & Percussion</a>
+                        <a href="#catalogue"><span class="micon"><svg viewBox="0 0 24 24" fill="currentColor">
+                                    <circle cx="12" cy="2.4" r="1.5" />
+                                    <rect x="11.3" y="3.6" width="1.4" height="6.4" rx="0.7" />
+                                    <path
+                                        d="M12 9.4c2.6 0 4.2 2 4.2 4.6 0 1-.3 1.9-.9 2.7.5.2.9.7.9 1.3 0 .8-.6 1.4-1.4 1.4-.6 0-1.1-.4-1.3-.9-.4.1-.9.2-1.5.2s-1.1-.1-1.5-.2c-.2.5-.7.9-1.3.9-.8 0-1.4-.6-1.4-1.4 0-.6.4-1.1.9-1.3-.6-.8-.9-1.7-.9-2.7 0-2.6 1.6-4.6 4.2-4.6z" />
+                                </svg></span>Violins</a>
+                        <a href="#catalogue"><span class="micon"><svg viewBox="0 0 24 24" fill="currentColor">
+                                    <rect x="2.4" y="10.6" width="10.8" height="2.8" rx="1.2" />
+                                    <path d="M13 9.6l8-4.2v10.2l-8-4.2z" />
+                                    <rect x="6.6" y="7.4" width="1.6" height="3.2" rx="0.6" />
+                                    <rect x="9.2" y="7.4" width="1.6" height="3.2" rx="0.6" />
+                                    <rect x="4" y="7.4" width="1.6" height="3.2" rx="0.6" />
+                                </svg></span>Brass & Wind</a>
+                        <a href="#catalogue"><span class="micon"><svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 2C7.5 2 3.4 6 3.4 10.8c0 5 4 9.2 8.6 11.2 4.6-2 8.6-6.2 8.6-11.2C20.6 6 16.5 2 12 2z" />
+                                    <circle cx="12" cy="10.5" r="3" fill="var(--bg-card)" />
+                                </svg></span>Accessories</a>
+                    </div>
+                </li>
+                <li><a href="#brands">Brands</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="header-cta">
+                <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                        <circle cx="9" cy="21" r="1.4" />
+                        <circle cx="18" cy="21" r="1.4" />
+                        <path d="M2.5 3h2.4l2.4 12.2a2 2 0 002 1.6h8.6a2 2 0 002-1.6L21 7H6" />
+                    </svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <a href="https://wa.me/c/94717811388" target="_blank" rel="noopener" class="cta-btn">Chat on WhatsApp
+                    →</a>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+        </nav>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#home">Home</a>
+            <a href="#catalogue">Instruments</a>
+            <a href="#brands">Brands</a>
+            <a href="#about">About Us</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#contact">Contact</a>
+            <a href="https://wa.me/c/94717811388" target="_blank" rel="noopener">Chat on WhatsApp</a>
+        </div>
+    </header>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-drawer" id="cartDrawer">
+        <div class="cart-head">
+            <h3>Your Cart</h3>
+            <button class="cart-close" id="cartClose" aria-label="Close cart">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="cart-empty" id="cartEmpty">Your cart is empty — browse the showroom and add a few instruments.</p>
+        </div>
+        <div class="cart-foot">
+            <div class="cart-total-row"><span>Estimated Total</span><strong id="cartTotal">Rs. 0</strong></div>
+            <a class="cta-btn cart-checkout" id="cartCheckout" href="https://wa.me/c/94717811388" target="_blank"
+                rel="noopener">Checkout on WhatsApp →</a>
+            <p class="cart-note">Prices are estimates. We'll confirm final pricing and delivery on WhatsApp.</p>
+        </div>
+    </aside>
+
+    <!-- ============ HERO SLIDER ============ -->
+    <section class="hero-slider" id="home">
+        <div class="slide slide-1 active">
+            <div class="wrap">
+                <div class="slide-copy">
+                    <span class="eyebrow">Henihatta Showroom · Island-wide delivery</span>
+                    <h1>Life time music,<br>from our showroom<br>to your <span class="script"
+                            style="font-size:1.15em;">hands</span>.</h1>
+                    <p class="lead">Guitars, drums, keyboards and everything in between — genuine brands, honest prices,
+                        and repairs done right.</p>
+                    <div class="slide-actions">
+                        <a href="#catalogue" class="cta-btn">Browse Instruments</a>
+                        <a href="#contact" class="btn-ghost">Visit Our Showroom</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide slide-2">
+            <div class="wrap">
+                <div class="slide-copy">
+                    <span class="eyebrow">Delivered To Your Door</span>
+                    <h1>Anywhere in<br>Sri Lanka, <span class="script" style="font-size:1.1em;">delivered.</span></h1>
+                    <p class="lead">Order from Colombo to Jaffna — every instrument is packed with care and delivered
+                        island-wide, no exceptions.</p>
+                    <div class="slide-actions">
+                        <a href="https://wa.me/c/94717811388" target="_blank" rel="noopener" class="cta-btn">Order on
+                            WhatsApp</a>
+                        <a href="#catalogue" class="btn-ghost">See What We Stock</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide slide-3">
+            <div class="wrap">
+                <div class="slide-copy">
+                    <span class="eyebrow">Repairs & Servicing</span>
+                    <h1>We don't just sell it —<br>we <span class="script" style="font-size:1.1em;">keep it
+                            singing.</span></h1>
+                    <p class="lead">On selectable items, Dinu Music offers its own repair service — because a guarantee
+                        should outlast the sale.</p>
+                    <div class="slide-actions">
+                        <a href="https://wa.me/c/94717811388" target="_blank" rel="noopener" class="cta-btn">Ask About
+                            Repairs</a>
+                        <a href="#about" class="btn-ghost">Our Story</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="slider-arrow prev" id="prevBtn" aria-label="Previous slide">‹</button>
+        <button class="slider-arrow next" id="nextBtn" aria-label="Next slide">›</button>
+        <div class="slider-nav" id="sliderNav">
+            <button class="active" data-i="0"></button>
+            <button data-i="1"></button>
+            <button data-i="2"></button>
+        </div>
+    </section>
+
+    <!-- ============ POPULAR CATEGORIES ============ -->
+    <section class="pop-cats">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <div>
+                    <h2>Popular Categories</h2>
+                    <p>Browse the showroom by instrument family — everything is in stock or a WhatsApp message away.</p>
+                </div>
+            </div>
+            <div class="cat-scroll reveal">
+                <a class="cat-circle" href="#catalogue"><span class="ring"><img
+                            src="https://images.unsplash.com/photo-1725152471889-6c59a52e7794?auto=format&fit=crop&w=200&q=70"
+                            alt="Guitars"></span><span>Guitars</span></a>
+                <a class="cat-circle" href="#catalogue"><span class="ring"><img
+                            src="https://images.unsplash.com/photo-1543443258-92b04ad5ec6b?auto=format&fit=crop&w=200&q=70"
+                            alt="Drum Sets"></span><span>Drum Sets</span></a>
+                <a class="cat-circle" href="#catalogue"><span class="ring"><img
+                            src="https://images.unsplash.com/photo-1598653222000-6b7b7a552625?auto=format&fit=crop&w=200&q=70"
+                            alt="Keyboards"></span><span>Keyboards</span></a>
+                <a class="cat-circle" href="#catalogue"><span class="ring"><img
+                            src="https://images.unsplash.com/photo-1664493616579-641af5d19d33?auto=format&fit=crop&w=200&q=70"
+                            alt="Violins"></span><span>Violins</span></a>
+                <a class="cat-circle" href="#catalogue"><span class="ring"><img
+                            src="https://images.unsplash.com/photo-1692303365672-3f04586f5deb?auto=format&fit=crop&w=200&q=70"
+                            alt="Darbuka & Congo hand drums"></span><span>Darbuka & Congo</span></a>
+                <a class="cat-circle" href="#catalogue"><span class="ring"><img
+                            src="https://images.unsplash.com/photo-1646054678594-3b36e226e72d?auto=format&fit=crop&w=200&q=70"
+                            alt="Ukulele"></span><span>Ukulele</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FEATURED INSTRUMENTS (product-card grid) ============ -->
+    <section class="featured" id="catalogue">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <div>
+                    <h2>Popular Picks In-Store</h2>
+                    <p>A sample of what's on the showroom floor right now — message us on WhatsApp for current stock and
+                        pricing.</p>
+                </div>
+                <a href="https://wa.me/c/94717811388" target="_blank" rel="noopener" class="see-all">See full range on
+                    WhatsApp →</a>
+            </div>
+            <div class="prod-grid reveal">
+                <div class="prod-card">
+                    <div class="prod-media"><span class="prod-tag">In Stock</span><img
+                            src="https://images.unsplash.com/photo-1725152471889-6c59a52e7794?auto=format&fit=crop&w=600&q=70"
+                            alt="Acoustic guitars on display"></div>
+                    <div class="prod-body">
+                        <div class="vendor">Acoustic Guitars</div>
+                        <h4>Full-size Acoustic Guitar, Beginner to Intermediate</h4>
+                        <div class="prod-foot"><span class="prod-price">Rs. 24,500</span><button
+                                class="prod-cta add-cart" data-name="Full-size Acoustic Guitar" data-price="24500"
+                                data-img="https://images.unsplash.com/photo-1725152471889-6c59a52e7794?auto=format&fit=crop&w=200&q=60">Add
+                                to Cart</button></div>
+                    </div>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-media"><span class="prod-tag">In Stock</span><img
+                            src="https://images.unsplash.com/photo-1598653222000-6b7b7a552625?auto=format&fit=crop&w=600&q=70"
+                            alt="Portable electronic keyboard"></div>
+                    <div class="prod-body">
+                        <div class="vendor">Yamaha / Casio</div>
+                        <h4>Portable Keyboard, 61-Key with Adapter</h4>
+                        <div class="prod-foot"><span class="prod-price">Rs. 32,500</span><button
+                                class="prod-cta add-cart" data-name="Portable Keyboard 61-Key" data-price="32500"
+                                data-img="https://images.unsplash.com/photo-1598653222000-6b7b7a552625?auto=format&fit=crop&w=200&q=60">Add
+                                to Cart</button></div>
+                    </div>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-media"><span class="prod-tag">In Stock</span><img
+                            src="https://images.unsplash.com/photo-1543443258-92b04ad5ec6b?auto=format&fit=crop&w=600&q=70"
+                            alt="Acoustic drum kit"></div>
+                    <div class="prod-body">
+                        <div class="vendor">Drum Sets</div>
+                        <h4>5-Piece Acoustic Drum Kit with Hardware</h4>
+                        <div class="prod-foot"><span class="prod-price">Rs. 145,000</span><button
+                                class="prod-cta add-cart" data-name="5-Piece Acoustic Drum Kit" data-price="145000"
+                                data-img="https://images.unsplash.com/photo-1543443258-92b04ad5ec6b?auto=format&fit=crop&w=200&q=60">Add
+                                to Cart</button></div>
+                    </div>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-media"><span class="prod-tag">In Stock</span><img
+                            src="https://images.unsplash.com/photo-1664493616579-641af5d19d33?auto=format&fit=crop&w=600&q=70"
+                            alt="Student violin in case"></div>
+                    <div class="prod-body">
+                        <div class="vendor">Violins</div>
+                        <h4>Student Violin Set with Bow & Case</h4>
+                        <div class="prod-foot"><span class="prod-price">Rs. 18,900</span><button
+                                class="prod-cta add-cart" data-name="Student Violin Set" data-price="18900"
+                                data-img="https://images.unsplash.com/photo-1664493616579-641af5d19d33?auto=format&fit=crop&w=200&q=60">Add
+                                to Cart</button></div>
+                    </div>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-media"><span class="prod-tag">In Stock</span><img
+                            src="https://images.unsplash.com/photo-1543443258-92b04ad5ec6b?auto=format&fit=crop&w=600&q=70"
+                            alt="Percussion drum equipment"></div>
+                    <div class="prod-body">
+                        <div class="vendor">Percussion</div>
+                        <h4>Cajon Box Drum with Adjustable Snare</h4>
+                        <div class="prod-foot"><span class="prod-price">Rs. 21,500</span><button
+                                class="prod-cta add-cart" data-name="Cajon Box Drum" data-price="21500"
+                                data-img="https://images.unsplash.com/photo-1543443258-92b04ad5ec6b?auto=format&fit=crop&w=200&q=60">Add
+                                to Cart</button></div>
+                    </div>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-media"><span class="prod-tag">In Stock</span><img
+                            src="https://images.unsplash.com/photo-1508186736123-44a5fcb36f9f?auto=format&fit=crop&w=600&q=70"
+                            alt="Electric guitar close up"></div>
+                    <div class="prod-body">
+                        <div class="vendor">Electric Guitars</div>
+                        <h4>Electric Guitar & Amplifier Starter Package</h4>
+                        <div class="prod-foot"><span class="prod-price">Rs. 58,000</span><button
+                                class="prod-cta add-cart" data-name="Electric Guitar & Amp Package" data-price="58000"
+                                data-img="https://images.unsplash.com/photo-1508186736123-44a5fcb36f9f?auto=format&fit=crop&w=200&q=60">Add
+                                to Cart</button></div>
+                    </div>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-media"><span class="prod-tag">In Stock</span><img
+                            src="https://images.unsplash.com/photo-1646054678594-3b36e226e72d?auto=format&fit=crop&w=600&q=70"
+                            alt="Ukulele close up"></div>
+                    <div class="prod-body">
+                        <div class="vendor">Ukulele</div>
+                        <h4>Concert Ukulele with Padded Gig Bag</h4>
+                        <div class="prod-foot"><span class="prod-price">Rs. 9,900</span><button
+                                class="prod-cta add-cart" data-name="Concert Ukulele" data-price="9900"
+                                data-img="https://images.unsplash.com/photo-1646054678594-3b36e226e72d?auto=format&fit=crop&w=200&q=60">Add
+                                to Cart</button></div>
+                    </div>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-media"><span class="prod-tag">In Stock</span><img
+                            src="https://images.unsplash.com/photo-1573871669414-010dbf73ca84?auto=format&fit=crop&w=600&q=70"
+                            alt="Brass trumpet"></div>
+                    <div class="prod-body">
+                        <div class="vendor">Brass & Wind</div>
+                        <h4>Student Trumpet, Silver-plated Finish</h4>
+                        <div class="prod-foot"><span class="prod-price">Rs. 42,000</span><button
+                                class="prod-cta add-cart" data-name="Student Trumpet" data-price="42000"
+                                data-img="https://images.unsplash.com/photo-1573871669414-010dbf73ca84?auto=format&fit=crop&w=200&q=60">Add
+                                to Cart</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CATEGORY SHOWCASE ============ -->
+    <section class="cat-showcase">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <div>
+                    <h2>Shop by Category</h2>
+                    <p>Every family of instrument, one showroom — school sets, home practice, or stage-ready gear.</p>
+                </div>
+            </div>
+            <div class="cat-cards reveal">
+                <div class="cat-card">
+                    <div class="cat-card-media"><img
+                            src="https://images.unsplash.com/photo-1573871669414-010dbf73ca84?auto=format&fit=crop&w=500&q=70"
+                            alt="Brass and wind instruments"></div>
+                    <div class="cat-card-body">
+                        <h4>Brass & Wind</h4>
+                        <p>Trumpet, clarinet, melodica and harmonica for every ensemble.</p>
+                        <a class="shop-now" href="https://wa.me/c/94717811388" target="_blank" rel="noopener">Enquire
+                            Now →</a>
+                    </div>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-card-media"><img
+                            src="https://images.unsplash.com/photo-1671108801041-8d3c4f1bed77?auto=format&fit=crop&w=500&q=70"
+                            alt="Kalimba and accessories"></div>
+                    <div class="cat-card-body">
+                        <h4>Kalimba & Accessories</h4>
+                        <p>Kalimbas, strings, cases and accessories for guitars, violins & drums.</p>
+                        <a class="shop-now" href="https://wa.me/c/94717811388" target="_blank" rel="noopener">Enquire
+                            Now →</a>
+                    </div>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-card-media"><img
+                            src="https://images.unsplash.com/photo-1725152471889-6c59a52e7794?auto=format&fit=crop&w=500&q=70"
+                            alt="School instrument sets"></div>
+                    <div class="cat-card-body">
+                        <h4>School Instruments</h4>
+                        <p>Full sets and single items for school bands and music programs.</p>
+                        <a class="shop-now" href="https://wa.me/c/94717811388" target="_blank" rel="noopener">Enquire
+                            Now →</a>
+                    </div>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-card-media"><img
+                            src="https://images.unsplash.com/photo-1542744989-2a681859d344?auto=format&fit=crop&w=500&q=70"
+                            alt="Guitar amplifier"></div>
+                    <div class="cat-card-body">
+                        <h4>Guitar Amplifiers</h4>
+                        <p>Practice and stage amps to pair with any electric or bass guitar.</p>
+                        <a class="shop-now" href="https://wa.me/c/94717811388" target="_blank" rel="noopener">Enquire
+                            Now →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ BRANDS ============ -->
+    <section id="brands">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <div>
+                    <h2>Brands You'll Find In-Store</h2>
+                    <p>We stock trusted names across every instrument family, all backed by a Dinu Music guarantee.</p>
+                </div>
+            </div>
+            <div class="brands-grid reveal">
+                <div class="brand-tile"><span class="brand-logo">YAMAHA</span><span class="brand-rule"></span><span
+                        class="brand-sub">Keyboards & Pianos</span></div>
+                <div class="brand-tile"><span class="brand-logo">C<em>A</em>SIO</span><span
+                        class="brand-rule"></span><span class="brand-sub">Keyboards</span></div>
+                <div class="brand-tile"><span class="brand-logo">Ibanez-style</span><span
+                        class="brand-rule"></span><span class="brand-sub">Guitars & Bass</span></div>
+                <div class="brand-tile"><span class="brand-logo">PE<em>A</em>RL</span><span
+                        class="brand-rule"></span><span class="brand-sub">Drums</span></div>
+                <div class="brand-tile"><span class="brand-logo">St<em>a</em>gg</span><span
+                        class="brand-rule"></span><span class="brand-sub">Strings & Accessories</span></div>
+                <div class="brand-tile"><span class="brand-logo">Local Craft</span><span class="brand-rule"></span><span
+                        class="brand-sub">Handmade in Sri Lanka</span></div>
+            </div>
+            <p style="font-size:11.5px; color:var(--ink-faint); text-align:center; margin-top:16px;">Brand names shown
+                are trademarks of their respective owners.</p>
+        </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="about" id="about">
+        <div class="wrap">
+            <div class="reveal">
+                <img class="about-photo"
+                    src="https://images.unsplash.com/photo-1725152471889-6c59a52e7794?auto=format&fit=crop&w=900&q=70"
+                    alt="Instruments on display at Dinu Music Shop">
+                <p class="about-quote">"Our vision is to accurately identify your needs and provide you with a more
+                    efficient and friendly service."</p>
+            </div>
+            <div class="about-body reveal">
+                <p>Dinu Music Shop has spent years earning the trust of musicians across Sri Lanka — from first-time
+                    students to touring performers. Every instrument in our showroom is chosen for build quality, tone,
+                    and value, backed by a guarantee and, on selectable items, our own repair service.</p>
+                <p>Come in and try before you buy, or tell us what you're after over WhatsApp — guitars, violins, drum
+                    sets, Darbuka, Congo and Bongo drums, Cajon, keyboards, brass and school instruments — and we'll
+                    bring it to your door, anywhere on the island.</p>
+                <div class="about-tags">
+                    <span>Guitars & Bass</span><span>Violins</span><span>Drum Kits</span>
+                    <span>Casio & Yamaha Keyboards</span><span>Percussion</span><span>School
+                        Instruments</span><span>Repairs</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="features">
+        <div class="wrap">
+            <div class="feature reveal">
+                <span class="fnum">Trusted Brands</span>
+                <h3>Reputed brands, guaranteed</h3>
+                <p>Every instrument we stock comes from names you already trust, backed by a Dinu Music guarantee on
+                    every sale.</p>
+            </div>
+            <div class="feature reveal">
+                <span class="fnum">Delivery</span>
+                <h3>Island-wide delivery</h3>
+                <p>Order from anywhere in Sri Lanka — we pack and deliver instruments safely to your doorstep, no
+                    exceptions.</p>
+            </div>
+            <div class="feature reveal">
+                <span class="fnum">Pricing</span>
+                <h3>Lowest prices, no compromise</h3>
+                <p>We match showroom quality with prices that make sense — the highest quality items that fit your
+                    budget.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ REVIEWS ============ -->
+    <section id="reviews">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <div>
+                    <h2>What Musicians Say</h2>
+                    <p>Word of mouth from customers across the island.</p>
+                </div>
+                <a href="http://g.page/r/CQXoTe06TF9gEAE" target="_blank" rel="noopener" class="see-all">Read more on
+                    Google →</a>
+            </div>
+            <div class="showcase-grid reveal">
+                <div class="showcase-card">
+                    <span class="quote-mark">"</span>
+                    <p>Bought a full drum kit and they delivered it to Kandy within days, no hassle. Setup was perfect
+                        out of the box.</p>
+                    <div class="who">R. Fernando</div>
+                    <div class="role">Drummer, wedding band</div>
+                </div>
+                <div class="showcase-card">
+                    <span class="quote-mark">"</span>
+                    <p>My daughter's first violin came from Dinu — the staff took the time to explain sizing and even
+                        tuned it for us.</p>
+                    <div class="who">N. Perera</div>
+                    <div class="role">Parent</div>
+                </div>
+                <div class="showcase-card">
+                    <span class="quote-mark">"</span>
+                    <p>Fair prices on a Yamaha keyboard and they still repair it two years later. That's rare from a
+                        music shop.</p>
+                    <div class="who">S. Jayasuriya</div>
+                    <div class="role">Home studio owner</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ UPDATES / SOCIAL ============ -->
+    <section class="updates">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <div>
+                    <h2>Latest From Dinu Music</h2>
+                    <p>New stock, videos and reviews — follow along on our channels.</p>
+                </div>
+            </div>
+            <div class="update-grid reveal">
+                <a class="update-card" href="https://www.facebook.com/Dinumusicshop" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                    </svg>
+                    <h4>New Arrivals on Facebook</h4>
+                    <p>See what's just landed in the showroom, posted as it arrives.</p>
+                    <span class="go">Visit our page →</span>
+                </a>
+                <a class="update-card" href="https://www.youtube.com/channel/UCqOj6ip14NeLqztmG6ZoBpA" target="_blank"
+                    rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="2" y="5" width="20" height="14" rx="3" />
+                        <path d="M10 9l5 3-5 3z" />
+                    </svg>
+                    <h4>Watch on YouTube</h4>
+                    <p>Instrument walkthroughs, unboxings and showroom tours.</p>
+                    <span class="go">Watch now →</span>
+                </a>
+                <a class="update-card" href="http://g.page/r/CQXoTe06TF9gEAE" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 17.3l-6.2 3.7 1.6-7-5.4-4.6 7.1-.6L12 2l2.9 6.8 7.1.6-5.4 4.6 1.6 7z" />
+                    </svg>
+                    <h4>Read Customer Reviews</h4>
+                    <p>See what other musicians say about buying from Dinu Music.</p>
+                    <span class="go">Read on Google →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ WHATSAPP PROMO ============ -->
+    <section class="promo-strip">
+        <div class="wrap">
+            <div>
+                <h3>Prefer to just ask? Message us on WhatsApp.</h3>
+                <p>Tell us the instrument, your budget, and where you're located — we'll reply with what's in stock and
+                    a delivery estimate, no showroom visit required.</p>
+            </div>
+            <a href="https://wa.me/c/94717811388" target="_blank" rel="noopener" class="cta-btn">Start a WhatsApp Chat
+                →</a>
+        </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact">
+        <div class="wrap">
+            <div class="contact-info reveal">
+                <span class="eyebrow">Get In Touch</span>
+                <h2>Visit the showroom, or send us a note</h2>
+                <p>Pick up in person, or tell us what you're looking for — we'll quote you and arrange delivery anywhere
+                    on the island.</p>
+                <div class="info-row">
+                    <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                        <path
+                            d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.4 2.1L8 9.9a16 16 0 006 6l1.4-1.4a2 2 0 012.1-.4c.9.3 1.8.5 2.7.6a2 2 0 011.8 2.2z" />
+                    </svg>
+                    <div>
+                        <div class="t">Phone</div>
+                        <div class="v"><a href="tel:0777697989">0777 69 79 89</a></div>
+                    </div>
+                </div>
+                <div class="info-row">
+                    <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                        <path d="M4 4h16v16H4z" />
+                        <path d="M4 6l8 7 8-7" />
+                    </svg>
+                    <div>
+                        <div class="t">Email</div>
+                        <div class="v"><a href="mailto:info@dinumusicshop.com">info@dinumusicshop.com</a></div>
+                    </div>
+                </div>
+                <div class="info-row">
+                    <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                        <path d="M12 22s8-7.5 8-13a8 8 0 10-16 0c0 5.5 8 13 8 13z" />
+                        <circle cx="12" cy="9" r="2.5" />
+                    </svg>
+                    <div>
+                        <div class="t">Showroom</div>
+                        <div class="v">Henihatta, Sri Lanka</div>
+                    </div>
+                </div>
+                <div class="social-row">
+                    <a href="https://www.facebook.com/Dinumusicshop" target="_blank" rel="noopener"
+                        aria-label="Facebook">f</a>
+                    <a href="https://www.youtube.com/channel/UCqOj6ip14NeLqztmG6ZoBpA" target="_blank" rel="noopener"
+                        aria-label="YouTube">▶</a>
+                    <a href="https://wa.me/c/94717811388" target="_blank" rel="noopener" aria-label="WhatsApp">W</a>
+                    <a href="https://ikman.lk/en/shops/dinu-music-shop" target="_blank" rel="noopener"
+                        aria-label="ikman.lk">ik</a>
+                    <a href="http://g.page/r/CQXoTe06TF9gEAE" target="_blank" rel="noopener"
+                        aria-label="Google Reviews">★</a>
+                </div>
+            </div>
+
+            <form class="inquiry reveal" onsubmit="return false;">
+                <div class="row">
+                    <div class="field"><label for="name">Your name</label><input id="name" type="text"
+                            placeholder="Kasun Perera" required></div>
+                    <div class="field"><label for="email">Your email</label><input id="email" type="email"
+                            placeholder="you@email.com" required></div>
+                </div>
+                <div class="field full" style="margin-bottom:16px;">
+                    <label for="subject">Subject</label>
+                    <input id="subject" type="text" placeholder="e.g. Yamaha keyboard availability">
+                </div>
+                <div class="field full" style="margin-bottom:20px;">
+                    <label for="message">Your message (optional)</label>
+                    <textarea id="message" placeholder="Tell us what you're looking for..."></textarea>
+                </div>
+                <button class="submit-btn" type="submit">Send Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=dinu%20music%20shop%20henihatta&t=m&z=13&output=embed&iwloc=near"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+        <div class="wrap">
+            <div class="foot-grid">
+                <div class="foot-brand-block">
+                    <div class="brand">
+                        <svg width="34" height="34" viewBox="0 0 100 100" fill="none">
+                            <circle cx="50" cy="50" r="46" stroke="url(#fNavGrad)" stroke-width="4" />
+                            <path d="M56 18 C40 26, 34 40, 44 50 C56 62, 64 74, 50 82 C40 88, 30 82, 32 72"
+                                stroke="url(#fNavGrad2)" stroke-width="6" fill="none" stroke-linecap="round" />
+                            <circle cx="33" cy="76" r="6" fill="url(#fNavGrad2)" />
+                            <defs>
+                                <linearGradient id="fNavGrad" x1="0" y1="0" x2="100" y2="100">
+                                    <stop stop-color="#f2c14e" />
+                                    <stop offset="1" stop-color="#a8763a" />
+                                </linearGradient>
+                                <linearGradient id="fNavGrad2" x1="30" y1="18" x2="60" y2="82">
+                                    <stop stop-color="#e0217a" />
+                                    <stop offset="1" stop-color="#ff8a3d" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span class="brand-word"><b>DINU</b> music</span>
+                    </div>
+                    <p>"Life Time Music" — accurately identifying your needs, delivered island-wide with a guarantee
+                        behind every sale.</p>
+                </div>
+                <div class="foot-col">
+                    <h5>Shop</h5>
+                    <a href="#catalogue">Guitars & Bass</a>
+                    <a href="#catalogue">Keyboards & Piano</a>
+                    <a href="#catalogue">Drums & Percussion</a>
+                    <a href="#catalogue">Violins</a>
+                    <a href="#catalogue">School Instruments</a>
+                </div>
+                <div class="foot-col">
+                    <h5>Company</h5>
+                    <a href="#about">Our Story</a>
+                    <a href="#reviews">Reviews</a>
+                    <a href="#contact">Contact Us</a>
+                    <a href="https://ikman.lk/en/shops/dinu-music-shop" target="_blank" rel="noopener">ikman.lk
+                        Storefront</a>
+                </div>
+                <div class="foot-col">
+                    <h5>Connect</h5>
+                    <a href="tel:0777697989">0777 69 79 89</a>
+                    <a href="mailto:info@dinumusicshop.com">info@dinumusicshop.com</a>
+                    <a href="https://wa.me/c/94717811388" target="_blank" rel="noopener">WhatsApp Us</a>
+                    <a href="https://www.facebook.com/Dinumusicshop" target="_blank" rel="noopener">Facebook</a>
+                    <a href="https://www.youtube.com/channel/UCqOj6ip14NeLqztmG6ZoBpA" target="_blank"
+                        rel="noopener">YouTube</a>
+                </div>
+            </div>
+            <div class="foot-bottom">
+                <p>© 2026 Dinu Music Shop. All rights reserved.</p>
+                <div class="flinks">
+                    <a href="#home">Back to top ↑</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+    <script>
+        // mobile menu
+        const toggle = document.getElementById('menuToggle');
+        const menu = document.getElementById('mobileMenu');
+        toggle.addEventListener('click', () => menu.classList.toggle('open'));
+        document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
+        // mega menu (click to open on touch, hover on desktop)
+        const prodMenu = document.getElementById('prodMenu');
+        prodMenu.querySelector('a').addEventListener('click', (e) => {
+            if (window.matchMedia('(hover: none)').matches) { e.preventDefault(); prodMenu.classList.toggle('open'); }
+        });
+        prodMenu.addEventListener('mouseenter', () => prodMenu.classList.add('open'));
+        prodMenu.addEventListener('mouseleave', () => prodMenu.classList.remove('open'));
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        // ---------- scroll reveal (GSAP ScrollTrigger, staggered) ----------
+        document.querySelectorAll('.reveal').forEach(el => {
+            const siblings = el.parentElement.querySelectorAll(':scope > .reveal');
+            gsap.fromTo(el, { opacity: 0, y: 26 }, {
+                opacity: 1, y: 0, duration: 0.8, ease: 'power3.out',
+                scrollTrigger: { trigger: el, start: 'top 88%' },
+                delay: (Array.from(siblings).indexOf(el) % 4) * 0.08
+            });
+        });
+        // subtle stagger pop for product & category cards
+        gsap.utils.toArray('.prod-grid, .cat-cards, .cat-scroll, .showcase-grid, .update-grid, .brands-grid').forEach(grid => {
+            gsap.fromTo(grid.children, { opacity: 0, y: 22, scale: .97 }, {
+                opacity: 1, y: 0, scale: 1, duration: .6, ease: 'power2.out', stagger: 0.07,
+                scrollTrigger: { trigger: grid, start: 'top 85%' }
+            });
+        });
+
+        // ---------- hero slider (GSAP crossfade + staggered copy) ----------
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.slider-nav button');
+        let current = 0, timer;
+
+        function animateCopy(slide) {
+            const copy = slide.querySelector('.slide-copy');
+            if (!copy) return;
+            const targets = copy.querySelectorAll('.eyebrow, h1, p.lead, .slide-actions');
+            gsap.fromTo(targets, { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: .7, ease: 'power3.out', stagger: 0.1, delay: .15 });
+        }
+
+        function goTo(i) {
+            const prevSlide = slides[current];
+            current = (i + slides.length) % slides.length;
+            const nextSlide = slides[current];
+            if (prevSlide !== nextSlide) {
+                gsap.to(prevSlide, { opacity: 0, duration: .5, ease: 'power1.out', onComplete: () => prevSlide.classList.remove('active') });
+            }
+            nextSlide.classList.add('active');
+            gsap.fromTo(nextSlide, { opacity: 0 }, { opacity: 1, duration: .7, ease: 'power1.out' });
+            dots.forEach(d => d.classList.remove('active'));
+            dots[current].classList.add('active');
+            animateCopy(nextSlide);
+        }
+        function next() { goTo(current + 1); }
+        function prev() { goTo(current - 1); }
+        function startAuto() { timer = setInterval(next, 6000); }
+        function stopAuto() { clearInterval(timer); }
+        dots.forEach((d, i) => d.addEventListener('click', () => { goTo(i); stopAuto(); startAuto(); }));
+        document.getElementById('nextBtn').addEventListener('click', () => { next(); stopAuto(); startAuto(); });
+        document.getElementById('prevBtn').addEventListener('click', () => { prev(); stopAuto(); startAuto(); });
+        animateCopy(slides[0]);
+        startAuto();
+
+        // ---------- cart ----------
+        let cart = [];
+        const cartBtn = document.getElementById('cartBtn');
+        const cartCount = document.getElementById('cartCount');
+        const cartDrawer = document.getElementById('cartDrawer');
+        const cartOverlay = document.getElementById('cartOverlay');
+        const cartClose = document.getElementById('cartClose');
+        const cartItemsEl = document.getElementById('cartItems');
+        const cartEmpty = document.getElementById('cartEmpty');
+        const cartTotalEl = document.getElementById('cartTotal');
+        const cartCheckout = document.getElementById('cartCheckout');
+        const fmt = n => 'Rs. ' + n.toLocaleString('en-LK');
+
+        function renderCart() {
+            cartItemsEl.querySelectorAll('.cart-item').forEach(n => n.remove());
+            const totalQty = cart.reduce((s, i) => s + i.qty, 0);
+            cartCount.textContent = totalQty;
+            cartCount.style.display = totalQty ? 'flex' : 'none';
+            if (!cart.length) { cartEmpty.style.display = 'block'; }
+            else {
+                cartEmpty.style.display = 'none';
+                cart.forEach(item => {
+                    const row = document.createElement('div');
+                    row.className = 'cart-item';
+                    row.innerHTML = `
+          <img src="${item.img}" alt="${item.name}">
+          <div class="cart-item-body">
+            <h5>${item.name}</h5>
+            <div class="cart-item-price">${fmt(item.price)} × ${item.qty}</div>
+          </div>
+          <div class="cart-item-qty">
+            <button data-act="dec">−</button>
+            <span>${item.qty}</span>
+            <button data-act="inc">+</button>
+          </div>
+          <button class="cart-item-remove" data-act="remove">✕</button>`;
+                    row.querySelector('[data-act="inc"]').addEventListener('click', () => { item.qty++; renderCart(); });
+                    row.querySelector('[data-act="dec"]').addEventListener('click', () => { item.qty--; if (item.qty <= 0) cart = cart.filter(i => i !== item); renderCart(); });
+                    row.querySelector('[data-act="remove"]').addEventListener('click', () => { cart = cart.filter(i => i !== item); renderCart(); });
+                    cartItemsEl.appendChild(row);
+                });
+            }
+            const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+            cartTotalEl.textContent = fmt(total);
+            const msg = cart.length
+                ? `Hi! I'd like to order:%0A${cart.map(i => `- ${i.name} x${i.qty} (${fmt(i.price * i.qty)})`).join('%0A')}%0A%0AEstimated total: ${fmt(total)}`
+                : `Hi! I'd like to enquire about instruments at Dinu Music Shop.`;
+            cartCheckout.href = `https://wa.me/94717811388?text=${msg}`;
+        }
+
+        function openCart() {
+            cartOverlay.classList.add('open');
+            gsap.to(cartDrawer, { x: 0, duration: .5, ease: 'power3.out' });
+        }
+        function closeCart() {
+            cartOverlay.classList.remove('open');
+            gsap.to(cartDrawer, { x: '100%', duration: .4, ease: 'power2.in' });
+        }
+        cartBtn.addEventListener('click', openCart);
+        cartClose.addEventListener('click', closeCart);
+        cartOverlay.addEventListener('click', closeCart);
+        gsap.set(cartDrawer, { x: '100%' });
+
+        document.querySelectorAll('.add-cart').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const { name, price, img } = btn.dataset;
+                const p = parseFloat(price);
+                const existing = cart.find(i => i.name === name);
+                if (existing) existing.qty++;
+                else cart.push({ name, price: p, img, qty: 1 });
+                renderCart();
+
+                // anime.js flying thumbnail + button feedback
+                const rect = btn.getBoundingClientRect();
+                const cartRect = cartBtn.getBoundingClientRect();
+                const fly = document.createElement('img');
+                fly.src = img;
+                fly.className = 'fly-thumb';
+                fly.style.left = rect.left + rect.width / 2 - 23 + 'px';
+                fly.style.top = rect.top + rect.height / 2 - 23 + 'px';
+                document.body.appendChild(fly);
+                anime({
+                    targets: fly,
+                    left: cartRect.left + cartRect.width / 2 - 23,
+                    top: cartRect.top + cartRect.height / 2 - 23,
+                    scale: [1, 0.2],
+                    opacity: [1, 0.6],
+                    easing: 'easeInCubic',
+                    duration: 700,
+                    complete: () => {
+                        fly.remove();
+                        anime({ targets: cartBtn, scale: [1, 1.35, 1], duration: 380, easing: 'easeOutElastic(1, .6)' });
+                    }
+                });
+
+                btn.classList.add('added');
+                const original = btn.textContent;
+                btn.textContent = 'Added ✓';
+                anime({ targets: btn, scale: [1, 1.08, 1], duration: 340, easing: 'easeOutQuad' });
+                setTimeout(() => { btn.textContent = original; btn.classList.remove('added'); }, 1200);
+            });
+        });
+        renderCart();
+    </script>
+
+</body>
+
+</html>
