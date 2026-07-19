@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dinu Music Shop — Life Time Music</title>
+<title>Full-size Acoustic Guitar, Beginner to Intermediate — Dinu Music Shop</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500&family=Oswald:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
@@ -445,6 +445,69 @@
 
     .cart-drawer{padding:18px 14px;}
   }
+
+
+  /* ============ PRODUCT DETAIL PAGE ============ */
+  .breadcrumb{font-size:12.5px; color:var(--ink-faint); margin:22px 0 6px; display:flex; align-items:center; gap:6px; flex-wrap:wrap;}
+  .breadcrumb a{color:var(--ink-faint); text-decoration:none;}
+  .breadcrumb a:hover{color:var(--gold-hi);}
+  .breadcrumb span{color:var(--ink-faint);}
+  .breadcrumb b{color:var(--ink); font-weight:600;}
+  .pd-wrap{padding:10px 0 60px;}
+  .pd-grid{display:grid; grid-template-columns:1.05fr 1fr; gap:52px; align-items:flex-start;}
+  .pd-gallery{position:sticky; top:100px;}
+  .pd-gallery-main{border-radius:var(--radius); overflow:hidden; border:1px solid var(--hairline); background:var(--bg-soft); aspect-ratio:1/1;}
+  .pd-gallery-main img{width:100%; height:100%; object-fit:cover; display:block;}
+  .pd-thumbs{display:flex; gap:10px; margin-top:12px;}
+  .pd-thumbs button{width:64px; height:64px; border-radius:var(--radius); overflow:hidden; border:1.5px solid var(--hairline); background:none; padding:0; cursor:pointer; opacity:.65; transition:opacity .2s, border-color .2s;}
+  .pd-thumbs button.active{opacity:1; border-color:var(--gold-hi);}
+  .pd-thumbs img{width:100%; height:100%; object-fit:cover; display:block;}
+  .pd-vendor{font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--gold-hi); font-weight:700; margin-bottom:8px;}
+  .pd-title{font-size:clamp(24px,2.6vw,32px); color:var(--ink); margin-bottom:14px;}
+  .pd-rating{display:flex; align-items:center; gap:8px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;}
+  .pd-rating .stars{color:var(--gold-hi); letter-spacing:1px;}
+  .pd-price-row{display:flex; align-items:baseline; gap:12px; margin-bottom:18px;}
+  .pd-price{font-family:'Fraunces',serif; font-size:30px; font-weight:700; color:var(--ink);}
+  .pd-price-old{font-size:15px; color:var(--ink-faint); text-decoration:line-through;}
+  .pd-stock{display:inline-flex; align-items:center; gap:6px; font-size:12.5px; font-weight:700; color:#4c8f5c; margin-bottom:22px;}
+  .pd-stock::before{content:''; width:7px; height:7px; border-radius:50%; background:#4c8f5c;}
+  .pd-desc{color:var(--ink-muted); font-size:14.5px; line-height:1.7; margin-bottom:20px;}
+  .pd-bullets{list-style:none; margin-bottom:26px;}
+  .pd-bullets li{display:flex; gap:10px; font-size:13.5px; color:var(--ink-muted); padding:6px 0; align-items:flex-start;}
+  .pd-bullets li svg{width:16px; height:16px; flex-shrink:0; color:var(--gold-hi); margin-top:2px;}
+  .pd-buybox{border:1px solid var(--hairline); border-radius:var(--radius); padding:22px; background:var(--bg-card);}
+  .pd-qty-row{display:flex; align-items:center; gap:16px; margin-bottom:16px;}
+  .qty-stepper{display:flex; align-items:center; border:1.5px solid var(--hairline); border-radius:var(--radius); overflow:hidden;}
+  .qty-stepper button{width:38px; height:38px; background:var(--bg-soft); border:none; font-size:16px; color:var(--ink); cursor:pointer; transition:background .2s;}
+  .qty-stepper button:hover{background:var(--bg-card-hi);}
+  .qty-stepper span{width:42px; text-align:center; font-size:14.5px; font-weight:700; color:var(--ink);}
+  .pd-actions{display:flex; flex-direction:column; gap:10px;}
+  .pd-actions .cta-btn{justify-content:center; font-size:14px; padding:13px 20px;}
+  .pd-buynow{display:inline-flex; align-items:center; justify-content:center; gap:8px; width:100%; background:var(--ink); color:#fdf8ef; font-weight:700; font-size:14px; padding:13px 20px; border-radius:var(--radius); border:none; cursor:pointer; transition:opacity .2s;}
+  .pd-buynow:hover{opacity:.88;}
+  .pd-wa{display:inline-flex; align-items:center; justify-content:center; gap:8px; width:100%; border:1px solid var(--hairline); color:var(--ink-muted); font-weight:600; font-size:13.5px; padding:12px 20px; border-radius:var(--radius); text-decoration:none; transition:border-color .2s, color .2s;}
+  .pd-wa:hover{border-color:var(--gold-hi); color:var(--gold-hi);}
+  .pd-trust{margin-top:22px; padding-top:20px; border-top:1px dashed var(--hairline);}
+  .pd-trust-label{font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-faint); font-weight:700; margin-bottom:10px;}
+  .pd-trust-row{display:flex; align-items:center; gap:8px; flex-wrap:wrap;}
+  .pd-pay-ic{display:flex; align-items:center; justify-content:center; height:32px; padding:0 10px; border-radius:6px; background:#fff; border:1px solid var(--hairline);}
+  .pd-pay-ic.dark{background:var(--ink);}
+  .pd-pay-ic svg{height:14px; width:auto;}
+  .pd-pay-ic.ez svg{height:20px; width:20px;}
+  .pd-guarantee{display:flex; gap:10px; align-items:flex-start; margin-top:16px; font-size:12px; color:var(--ink-faint); line-height:1.5;}
+  .pd-guarantee svg{width:16px; height:16px; flex-shrink:0; color:var(--gold-hi); margin-top:1px;}
+  .pd-specs{margin-top:36px;}
+  .pd-specs h3{font-size:18px; color:var(--ink); margin-bottom:14px;}
+  .pd-specs table{width:100%; border-collapse:collapse;}
+  .pd-specs td{padding:11px 0; border-bottom:1px dashed var(--hairline); font-size:13.5px; color:var(--ink);}
+  .pd-specs td:first-child{color:var(--ink-faint); width:42%;}
+  .pd-related{margin-top:56px;}
+  .pd-related h3{font-size:20px; color:var(--ink); margin-bottom:18px;}
+  @media (max-width: 860px){
+    .pd-grid{grid-template-columns:1fr; gap:30px;}
+    .pd-gallery{position:static;}
+  }
+
 </style>
 </head>
 <body>
@@ -528,6 +591,7 @@
     <a class="cart-secondary" href="https://wa.me/94717811388?text=Hi!%20I'd%20like%20to%20enquire%20about%20instruments%20at%20Dinu%20Music%20Shop." target="_blank" rel="noopener">Prefer to ask first? Chat on WhatsApp</a>
   </div>
 </aside>
+
 
 <!-- ============ CHECKOUT MODAL ============ -->
 <div class="checkout-overlay" id="checkoutOverlay">
@@ -613,378 +677,129 @@
 </div>
 </div>
 
-<!-- ============ HERO SLIDER ============ -->
-<section class="hero-slider" id="home">
-  <div class="slide slide-1 active">
-    <div class="wrap">
-      <div class="slide-copy">
-        <span class="eyebrow">Henihatta Showroom · Island-wide delivery</span>
-        <h1>Life time music,<br>from our showroom<br>to your <span class="script" style="font-size:1.15em;">hands</span>.</h1>
-        <p class="lead">Guitars, drums, keyboards and everything in between — genuine brands, honest prices, and repairs done right.</p>
-        <div class="slide-actions">
-          <a href="#catalogue" class="cta-btn">Browse Instruments</a>
-          <a href="#contact" class="btn-ghost">Visit Our Showroom</a>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="slide slide-2">
-    <div class="wrap">
-      <div class="slide-copy">
-        <span class="eyebrow">Delivered To Your Door</span>
-        <h1>Anywhere in<br>Sri Lanka, <span class="script" style="font-size:1.1em;">delivered.</span></h1>
-        <p class="lead">Order from Colombo to Jaffna — every instrument is packed with care and delivered island-wide, no exceptions.</p>
-        <div class="slide-actions">
-          <a href="https://wa.me/94717811388?text=Hi!%20I'd%20like%20to%20place%20an%20order%20and%20get%20it%20delivered." target="_blank" rel="noopener" class="cta-btn">Order on WhatsApp</a>
-          <a href="#catalogue" class="btn-ghost">See What We Stock</a>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="slide slide-3">
-    <div class="wrap">
-      <div class="slide-copy">
-        <span class="eyebrow">Repairs & Servicing</span>
-        <h1>We don't just sell it —<br>we <span class="script" style="font-size:1.1em;">keep it singing.</span></h1>
-        <p class="lead">On selectable items, Dinu Music offers its own repair service — because a guarantee should outlast the sale.</p>
-        <div class="slide-actions">
-          <a href="https://wa.me/94717811388?text=Hi!%20I%27d%20like%20to%20ask%20about%20instrument%20repairs%20%26%20servicing." target="_blank" rel="noopener" class="cta-btn">Ask About Repairs</a>
-          <a href="#about" class="btn-ghost">Our Story</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <button class="slider-arrow prev" id="prevBtn" aria-label="Previous slide">‹</button>
-  <button class="slider-arrow next" id="nextBtn" aria-label="Next slide">›</button>
-  <div class="slider-nav" id="sliderNav">
-    <button class="active" data-i="0"></button>
-    <button data-i="1"></button>
-    <button data-i="2"></button>
-  </div>
-</section>
-
-<!-- ============ POPULAR CATEGORIES ============ -->
-<section class="pop-cats">
+<!-- ============ PRODUCT DETAIL ============ -->
+<section class="pd-wrap">
   <div class="wrap">
-    <div class="section-head reveal">
-      <div><h2>Popular Categories</h2><p>Browse the showroom by instrument family — everything is in stock or a WhatsApp message away.</p></div>
-    </div>
-    <div class="cat-scroll reveal">
-      <a class="cat-circle" href="#catalogue"><span class="ring"><img src="https://images.unsplash.com/photo-1725152471889-6c59a52e7794?auto=format&fit=crop&w=200&q=70" alt="Guitars" loading="lazy" decoding="async"></span><span>Guitars</span></a>
-      <a class="cat-circle" href="#catalogue"><span class="ring"><img src="https://images.unsplash.com/photo-1543443258-92b04ad5ec6b?auto=format&fit=crop&w=200&q=70" alt="Drum Sets" loading="lazy" decoding="async"></span><span>Drum Sets</span></a>
-      <a class="cat-circle" href="#catalogue"><span class="ring"><img src="https://images.unsplash.com/photo-1598653222000-6b7b7a552625?auto=format&fit=crop&w=200&q=70" alt="Keyboards" loading="lazy" decoding="async"></span><span>Keyboards</span></a>
-      <a class="cat-circle" href="#catalogue"><span class="ring"><img src="https://images.unsplash.com/photo-1664493616579-641af5d19d33?auto=format&fit=crop&w=200&q=70" alt="Violins" loading="lazy" decoding="async"></span><span>Violins</span></a>
-      <a class="cat-circle" href="#catalogue"><span class="ring"><img src="https://images.unsplash.com/photo-1692303365672-3f04586f5deb?auto=format&fit=crop&w=200&q=70" alt="Darbuka & Congo hand drums" loading="lazy" decoding="async"></span><span>Darbuka & Congo</span></a>
-      <a class="cat-circle" href="#catalogue"><span class="ring"><img src="https://images.unsplash.com/photo-1646054678594-3b36e226e72d?auto=format&fit=crop&w=200&q=70" alt="Ukulele" loading="lazy" decoding="async"></span><span>Ukulele</span></a>
-    </div>
-  </div>
-</section>
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><a href="index.html#catalogue">Acoustic Guitars</a><span>/</span><b>Full-size Acoustic Guitar</b></div>
 
-<!-- ============ FEATURED INSTRUMENTS (product-card grid) ============ -->
-<section class="featured" id="catalogue">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div><h2>Popular Picks In-Store</h2><p>A sample of what's on the showroom floor right now — message us on WhatsApp for current stock and pricing.</p></div>
-      <a href="https://wa.me/c/94717811388" target="_blank" rel="noopener" class="see-all">See full range on WhatsApp →</a>
-    </div>
-    <div class="prod-grid reveal">
-      <div class="prod-card">
-        <a href="product-acoustic-guitar.html" style="display:contents;"><div class="prod-media"><span class="prod-tag">In Stock</span><img src="https://images.unsplash.com/photo-1725152471889-6c59a52e7794?auto=format&fit=crop&w=600&q=70" alt="Acoustic guitars on display" loading="lazy" decoding="async"></div>
-<div class="prod-body">
-          <div class="vendor">Acoustic Guitars</div>
-          <h4>Full-size Acoustic Guitar, Beginner to Intermediate</h4>
-          </a>
-<div class="prod-foot"><span class="prod-price">Rs. 24,500</span><button class="prod-cta add-cart" data-name="Full-size Acoustic Guitar" data-price="24500" data-img="https://images.unsplash.com/photo-1725152471889-6c59a52e7794?auto=format&fit=crop&w=200&q=60">Add to Cart</button></div>
+    <div class="pd-grid">
+      <div class="pd-gallery reveal">
+        <div class="pd-gallery-main"><img id="pdMainImg" src="https://images.unsplash.com/photo-1725152471889-6c59a52e7794?auto=format&fit=crop&w=900&q=75" alt="Full-size Acoustic Guitar, Beginner to Intermediate"></div>
+        <div class="pd-thumbs">
+          <button class="active" data-full="https://images.unsplash.com/photo-1725152471889-6c59a52e7794?auto=format&fit=crop&w=900&q=75"><img src="https://images.unsplash.com/photo-1725152471889-6c59a52e7794?auto=format&fit=crop&w=150&q=60" alt=""></button>
+          <button data-full="https://images.unsplash.com/photo-1725152471889-6c59a52e7794?auto=format&fit=crop&w=900&q=75&sat=-30"><img src="https://images.unsplash.com/photo-1725152471889-6c59a52e7794?auto=format&fit=crop&w=150&q=60&sat=-30" alt=""></button>
+          <button data-full="https://images.unsplash.com/photo-1725152471889-6c59a52e7794?auto=format&fit=crop&w=900&q=75&flip=h"><img src="https://images.unsplash.com/photo-1725152471889-6c59a52e7794?auto=format&fit=crop&w=150&q=60&flip=h" alt=""></button>
         </div>
       </div>
+
+      <div class="pd-info reveal">
+        <div class="pd-vendor">Acoustic Guitars</div>
+        <h1 class="pd-title">Full-size Acoustic Guitar, Beginner to Intermediate</h1>
+        <div class="pd-rating"><span class="stars">★★★★★</span><span>4.8 · Trusted by musicians island-wide</span></div>
+        <div class="pd-price-row"><span class="pd-price">Rs. 24,500</span></div>
+        <div class="pd-stock">In Stock — ships island-wide</div>
+        <p class="pd-desc">A full-size steel-string acoustic built for players moving from their first chords into real playing. Solid top construction gives it a warm, projecting tone that holds up whether it's being strummed on a porch or plugged into a small PA at a school concert.</p>
+        <ul class="pd-bullets">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Full-size body, ideal for teens and adults</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Solid top for richer tone as it ages</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Comes with a gig bag and spare string set</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Factory setup and intonation check before pickup</li>
+        </ul>
+
+        <div class="pd-buybox">
+          <div class="pd-qty-row">
+            <div class="qty-stepper">
+              <button type="button" id="pdQtyMinus" aria-label="Decrease quantity">−</button>
+              <span id="pdQty">1</span>
+              <button type="button" id="pdQtyPlus" aria-label="Increase quantity">+</button>
+            </div>
+            <span style="font-size:12.5px;color:var(--ink-faint);">In stock, ready to ship</span>
+          </div>
+          <div class="pd-actions">
+            <button class="cta-btn" id="pdAddToCart" type="button" data-name="Full-size Acoustic Guitar" data-price="24500" data-img="https://images.unsplash.com/photo-1725152471889-6c59a52e7794?auto=format&fit=crop&w=200&q=60">Add to Cart</button>
+            <button class="pd-buynow" id="pdBuyNow" type="button" data-name="Full-size Acoustic Guitar" data-price="24500" data-img="https://images.unsplash.com/photo-1725152471889-6c59a52e7794?auto=format&fit=crop&w=200&q=60">Buy Now →</button>
+            <a class="pd-wa" href="https://wa.me/94717811388?text=Hi%21%20I%27d%20like%20to%20ask%20about%20the%20Full-size%20Acoustic%20Guitar%20listed%20on%20your%20site." target="_blank" rel="noopener">Ask about this item on WhatsApp</a>
+          </div>
+
+          <div class="pd-trust">
+            <div class="pd-trust-label">Secure Checkout — We Accept</div>
+            <div class="pd-trust-row">
+        <div class="pd-pay-ic"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#1A1F71"><title>Visa</title><path d="M9.112 8.262L5.97 15.758H3.92L2.374 9.775c-.094-.368-.175-.503-.461-.658C1.447 8.864.677 8.627 0 8.479l.046-.217h3.3a.904.904 0 01.894.764l.817 4.338 2.018-5.102zm8.033 5.049c.008-1.979-2.736-2.088-2.717-2.972.006-.269.262-.555.822-.628a3.66 3.66 0 011.913.336l.34-1.59a5.207 5.207 0 00-1.814-.333c-1.917 0-3.266 1.02-3.278 2.479-.012 1.079.963 1.68 1.698 2.04.756.367 1.01.603 1.006.931-.005.504-.602.725-1.16.734-.975.015-1.54-.263-1.992-.473l-.351 1.642c.453.208 1.289.39 2.156.398 2.037 0 3.37-1.006 3.377-2.564m5.061 2.447H24l-1.565-7.496h-1.656a.883.883 0 00-.826.55l-2.909 6.946h2.036l.405-1.12h2.488zm-2.163-2.656l1.02-2.815.588 2.815zm-8.16-4.84l-1.603 7.496H8.34l1.605-7.496z"/></svg></div>
+        <div class="pd-pay-ic"><svg viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg" style="height:18px;"><title>Mastercard</title><circle cx="8" cy="8" r="8" fill="#EB001B"/><circle cx="16" cy="8" r="8" fill="#F79E1B"/><path d="M12 1.5a8 8 0 000 13 8 8 0 000-13z" fill="#FF5F00"/></svg></div>
+        <div class="pd-pay-ic ez"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ezGradPd" x1="0" y1="0" x2="24" y2="24"><stop offset="0" stop-color="#F7941D"/><stop offset="1" stop-color="#ED1C24"/></linearGradient></defs><circle cx="12" cy="12" r="11" fill="url(#ezGradPd)"/><text x="12" y="16" text-anchor="middle" font-family="Manrope, sans-serif" font-weight="800" font-size="10.5" fill="#fff">eZ</text></svg></div>
+        <div class="pd-pay-ic dark"><svg viewBox="0 0 24 24" fill="none" stroke="#fdf8ef" stroke-width="1.6" style="height:16px;width:16px;"><path d="M3 10l9-6 9 6"/><path d="M5 10v9M10 10v9M14 10v9M19 10v9"/><path d="M3 19h18"/></svg></div>
+        <div class="pd-pay-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#2c1e15" stroke-width="1.6" style="height:16px;width:16px;"><rect x="2" y="7" width="20" height="12" rx="2"/><circle cx="12" cy="13" r="3"/><path d="M6 7V5.5A2.5 2.5 0 018.5 3h7A2.5 2.5 0 0118 5.5V7"/></svg></div>
+
+            </div>
+            <div class="pd-guarantee">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg>
+              <span>Covered by a Dinu Music Shop guarantee, with our own repair service available on selectable items.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pd-specs reveal">
+      <h3>Specifications</h3>
+      <table>
+        <tbody>
+          <tr><td>Body Style</td><td>Dreadnought</td></tr>
+          <tr><td>Top</td><td>Solid spruce</td></tr>
+          <tr><td>Back & Sides</td><td>Mahogany laminate</td></tr>
+          <tr><td>Strings</td><td>Steel, light gauge</td></tr>
+          <tr><td>Includes</td><td>Gig bag, strap, picks</td></tr>
+          <tr><td>Recommended For</td><td>Beginner to intermediate</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pd-related reveal">
+      <h3>You may also like</h3>
+      <div class="prod-grid">
       <div class="prod-card">
-        <a href="product-keyboard-61key.html" style="display:contents;"><div class="prod-media"><span class="prod-tag">In Stock</span><img src="https://images.unsplash.com/photo-1598653222000-6b7b7a552625?auto=format&fit=crop&w=600&q=70" alt="Portable electronic keyboard" loading="lazy" decoding="async"></div>
-<div class="prod-body">
+        <a href="product-keyboard-61key.html" style="display:contents;">
+        <div class="prod-media"><span class="prod-tag">In Stock</span><img src="https://images.unsplash.com/photo-1598653222000-6b7b7a552625?auto=format&fit=crop&w=600&q=70" alt="Portable Keyboard, 61-Key with Adapter" loading="lazy" decoding="async"></div>
+        <div class="prod-body">
           <div class="vendor">Yamaha / Casio</div>
           <h4>Portable Keyboard, 61-Key with Adapter</h4>
-          </a>
-<div class="prod-foot"><span class="prod-price">Rs. 32,500</span><button class="prod-cta add-cart" data-name="Portable Keyboard 61-Key" data-price="32500" data-img="https://images.unsplash.com/photo-1598653222000-6b7b7a552625?auto=format&fit=crop&w=200&q=60">Add to Cart</button></div>
+        </div>
+        </a>
+        <div class="prod-body" style="padding-top:0;">
+          <div class="prod-foot"><span class="prod-price">Rs. 32,500</span><button class="prod-cta add-cart" data-name="Portable Keyboard 61-Key" data-price="32500" data-img="https://images.unsplash.com/photo-1598653222000-6b7b7a552625?auto=format&fit=crop&w=200&q=60">Add to Cart</button></div>
         </div>
       </div>
       <div class="prod-card">
-        <a href="product-acoustic-drum-kit.html" style="display:contents;"><div class="prod-media"><span class="prod-tag">In Stock</span><img src="https://images.unsplash.com/photo-1543443258-92b04ad5ec6b?auto=format&fit=crop&w=600&q=70" alt="Acoustic drum kit" loading="lazy" decoding="async"></div>
-<div class="prod-body">
+        <a href="product-acoustic-drum-kit.html" style="display:contents;">
+        <div class="prod-media"><span class="prod-tag">In Stock</span><img src="https://images.unsplash.com/photo-1543443258-92b04ad5ec6b?auto=format&fit=crop&w=600&q=70" alt="5-Piece Acoustic Drum Kit with Hardware" loading="lazy" decoding="async"></div>
+        <div class="prod-body">
           <div class="vendor">Drum Sets</div>
           <h4>5-Piece Acoustic Drum Kit with Hardware</h4>
-          </a>
-<div class="prod-foot"><span class="prod-price">Rs. 145,000</span><button class="prod-cta add-cart" data-name="5-Piece Acoustic Drum Kit" data-price="145000" data-img="https://images.unsplash.com/photo-1543443258-92b04ad5ec6b?auto=format&fit=crop&w=200&q=60">Add to Cart</button></div>
+        </div>
+        </a>
+        <div class="prod-body" style="padding-top:0;">
+          <div class="prod-foot"><span class="prod-price">Rs. 145,000</span><button class="prod-cta add-cart" data-name="5-Piece Acoustic Drum Kit" data-price="145000" data-img="https://images.unsplash.com/photo-1543443258-92b04ad5ec6b?auto=format&fit=crop&w=200&q=60">Add to Cart</button></div>
         </div>
       </div>
       <div class="prod-card">
-        <a href="product-student-violin.html" style="display:contents;"><div class="prod-media"><span class="prod-tag">In Stock</span><img src="https://images.unsplash.com/photo-1664493616579-641af5d19d33?auto=format&fit=crop&w=600&q=70" alt="Student violin in case" loading="lazy" decoding="async"></div>
-<div class="prod-body">
+        <a href="product-student-violin.html" style="display:contents;">
+        <div class="prod-media"><span class="prod-tag">In Stock</span><img src="https://images.unsplash.com/photo-1664493616579-641af5d19d33?auto=format&fit=crop&w=600&q=70" alt="Student Violin Set with Bow & Case" loading="lazy" decoding="async"></div>
+        <div class="prod-body">
           <div class="vendor">Violins</div>
           <h4>Student Violin Set with Bow & Case</h4>
-          </a>
-<div class="prod-foot"><span class="prod-price">Rs. 18,900</span><button class="prod-cta add-cart" data-name="Student Violin Set" data-price="18900" data-img="https://images.unsplash.com/photo-1664493616579-641af5d19d33?auto=format&fit=crop&w=200&q=60">Add to Cart</button></div>
+        </div>
+        </a>
+        <div class="prod-body" style="padding-top:0;">
+          <div class="prod-foot"><span class="prod-price">Rs. 18,900</span><button class="prod-cta add-cart" data-name="Student Violin Set" data-price="18900" data-img="https://images.unsplash.com/photo-1664493616579-641af5d19d33?auto=format&fit=crop&w=200&q=60">Add to Cart</button></div>
         </div>
       </div>
-      <div class="prod-card">
-        <a href="product-cajon-box-drum.html" style="display:contents;"><div class="prod-media"><span class="prod-tag">In Stock</span><img src="https://images.unsplash.com/photo-1543443258-92b04ad5ec6b?auto=format&fit=crop&w=600&q=70" alt="Percussion drum equipment" loading="lazy" decoding="async"></div>
-<div class="prod-body">
-          <div class="vendor">Percussion</div>
-          <h4>Cajon Box Drum with Adjustable Snare</h4>
-          </a>
-<div class="prod-foot"><span class="prod-price">Rs. 21,500</span><button class="prod-cta add-cart" data-name="Cajon Box Drum" data-price="21500" data-img="https://images.unsplash.com/photo-1543443258-92b04ad5ec6b?auto=format&fit=crop&w=200&q=60">Add to Cart</button></div>
-        </div>
-      </div>
-      <div class="prod-card">
-        <a href="product-electric-guitar-amp.html" style="display:contents;"><div class="prod-media"><span class="prod-tag">In Stock</span><img src="https://images.unsplash.com/photo-1508186736123-44a5fcb36f9f?auto=format&fit=crop&w=600&q=70" alt="Electric guitar close up" loading="lazy" decoding="async"></div>
-<div class="prod-body">
-          <div class="vendor">Electric Guitars</div>
-          <h4>Electric Guitar & Amplifier Starter Package</h4>
-          </a>
-<div class="prod-foot"><span class="prod-price">Rs. 58,000</span><button class="prod-cta add-cart" data-name="Electric Guitar & Amp Package" data-price="58000" data-img="https://images.unsplash.com/photo-1508186736123-44a5fcb36f9f?auto=format&fit=crop&w=200&q=60">Add to Cart</button></div>
-        </div>
-      </div>
-      <div class="prod-card">
-        <a href="product-concert-ukulele.html" style="display:contents;"><div class="prod-media"><span class="prod-tag">In Stock</span><img src="https://images.unsplash.com/photo-1646054678594-3b36e226e72d?auto=format&fit=crop&w=600&q=70" alt="Ukulele close up" loading="lazy" decoding="async"></div>
-<div class="prod-body">
-          <div class="vendor">Ukulele</div>
-          <h4>Concert Ukulele with Padded Gig Bag</h4>
-          </a>
-<div class="prod-foot"><span class="prod-price">Rs. 9,900</span><button class="prod-cta add-cart" data-name="Concert Ukulele" data-price="9900" data-img="https://images.unsplash.com/photo-1646054678594-3b36e226e72d?auto=format&fit=crop&w=200&q=60">Add to Cart</button></div>
-        </div>
-      </div>
-      <div class="prod-card">
-        <a href="product-student-trumpet.html" style="display:contents;"><div class="prod-media"><span class="prod-tag">In Stock</span><img src="https://images.unsplash.com/photo-1573871669414-010dbf73ca84?auto=format&fit=crop&w=600&q=70" alt="Brass trumpet" loading="lazy" decoding="async"></div>
-<div class="prod-body">
-          <div class="vendor">Brass & Wind</div>
-          <h4>Student Trumpet, Silver-plated Finish</h4>
-          </a>
-<div class="prod-foot"><span class="prod-price">Rs. 42,000</span><button class="prod-cta add-cart" data-name="Student Trumpet" data-price="42000" data-img="https://images.unsplash.com/photo-1573871669414-010dbf73ca84?auto=format&fit=crop&w=200&q=60">Add to Cart</button></div>
-        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ CATEGORY SHOWCASE ============ -->
-<section class="cat-showcase">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div><h2>Shop by Category</h2><p>Every family of instrument, one showroom — school sets, home practice, or stage-ready gear.</p></div>
-    </div>
-    <div class="cat-cards reveal">
-      <div class="cat-card">
-        <div class="cat-card-media"><img src="https://images.unsplash.com/photo-1573871669414-010dbf73ca84?auto=format&fit=crop&w=500&q=70" alt="Brass and wind instruments" loading="lazy" decoding="async"></div>
-        <div class="cat-card-body">
-          <h4>Brass & Wind</h4>
-          <p>Trumpet, clarinet, melodica and harmonica for every ensemble.</p>
-          <a class="shop-now" href="https://wa.me/94717811388?text=Hi!%20I%27d%20like%20to%20enquire%20about%20Brass%20%26%20Wind%20instruments." target="_blank" rel="noopener">Enquire Now →</a>
-        </div>
-      </div>
-      <div class="cat-card">
-        <div class="cat-card-media"><img src="https://images.unsplash.com/photo-1671108801041-8d3c4f1bed77?auto=format&fit=crop&w=500&q=70" alt="Kalimba and accessories" loading="lazy" decoding="async"></div>
-        <div class="cat-card-body">
-          <h4>Kalimba & Accessories</h4>
-          <p>Kalimbas, strings, cases and accessories for guitars, violins & drums.</p>
-          <a class="shop-now" href="https://wa.me/94717811388?text=Hi!%20I%27d%20like%20to%20enquire%20about%20Kalimba%20%26%20Accessories." target="_blank" rel="noopener">Enquire Now →</a>
-        </div>
-      </div>
-      <div class="cat-card">
-        <div class="cat-card-media"><img src="https://images.unsplash.com/photo-1725152471889-6c59a52e7794?auto=format&fit=crop&w=500&q=70" alt="School instrument sets" loading="lazy" decoding="async"></div>
-        <div class="cat-card-body">
-          <h4>School Instruments</h4>
-          <p>Full sets and single items for school bands and music programs.</p>
-          <a class="shop-now" href="https://wa.me/94717811388?text=Hi!%20I%27d%20like%20to%20enquire%20about%20School%20Instruments." target="_blank" rel="noopener">Enquire Now →</a>
-        </div>
-      </div>
-      <div class="cat-card">
-        <div class="cat-card-media"><img src="https://images.unsplash.com/photo-1542744989-2a681859d344?auto=format&fit=crop&w=500&q=70" alt="Guitar amplifier" loading="lazy" decoding="async"></div>
-        <div class="cat-card-body">
-          <h4>Guitar Amplifiers</h4>
-          <p>Practice and stage amps to pair with any electric or bass guitar.</p>
-          <a class="shop-now" href="https://wa.me/94717811388?text=Hi!%20I%27d%20like%20to%20enquire%20about%20Guitar%20Amplifiers." target="_blank" rel="noopener">Enquire Now →</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ BRANDS ============ -->
-<section id="brands">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div><h2>Brands You'll Find In-Store</h2><p>We stock trusted names across every instrument family, all backed by a Dinu Music guarantee.</p></div>
-    </div>
-    <div class="brands-grid reveal">
-      <div class="brand-tile"><img class="brand-logo-img" src="https://res.cloudinary.com/dukv2otyn/image/upload/v1784462238/Yamaha-Logo_rsoxdf.png" alt="Yamaha" loading="lazy"><span class="brand-rule"></span><span class="brand-sub">Keyboards & Pianos</span></div>
-      <div class="brand-tile"><img class="brand-logo-img" src="https://res.cloudinary.com/dukv2otyn/image/upload/v1784462238/70-Sub-Banner-Information-piano-Casio-removebg-preview_kf9la5.png" alt="Casio" loading="lazy"><span class="brand-rule"></span><span class="brand-sub">Keyboards</span></div>
-      <div class="brand-tile"><img class="brand-logo-img" src="https://res.cloudinary.com/dukv2otyn/image/upload/v1784462238/Ibanez-Logo-700x394_f2onzr.png" alt="Ibanez" loading="lazy"><span class="brand-rule"></span><span class="brand-sub">Guitars & Bass</span></div>
-      <div class="brand-tile"><img class="brand-logo-img" src="https://res.cloudinary.com/dukv2otyn/image/upload/v1784462238/pearl-logo-0_n0moq5.png" alt="Pearl" loading="lazy"><span class="brand-rule"></span><span class="brand-sub">Drums</span></div>
-      <div class="brand-tile"><img class="brand-logo-img" src="https://res.cloudinary.com/dukv2otyn/image/upload/v1784462238/Stagg_music_logo_efcjzv.png" alt="Stagg" loading="lazy"><span class="brand-rule"></span><span class="brand-sub">Strings & Accessories</span></div>
-      <div class="brand-tile"><span class="brand-logo">Local Craft</span><span class="brand-rule"></span><span class="brand-sub">Handmade in Sri Lanka</span></div>
-    </div>
-    <p style="font-size:11.5px; color:var(--ink-faint); text-align:center; margin-top:16px;">Brand names shown are trademarks of their respective owners.</p>
-  </div>
-</section>
-
-<!-- ============ ABOUT ============ -->
-<section class="about" id="about">
-  <div class="wrap">
-    <div class="reveal">
-      <img class="about-photo" src="https://images.unsplash.com/photo-1725152471889-6c59a52e7794?auto=format&fit=crop&w=900&q=70" alt="Instruments on display at Dinu Music Shop" loading="lazy" decoding="async">
-      <p class="about-quote">"Our vision is to accurately identify your needs and provide you with a more efficient and friendly service."</p>
-    </div>
-    <div class="about-body reveal">
-      <p>Dinu Music Shop has spent years earning the trust of musicians across Sri Lanka — from first-time students to touring performers. Every instrument in our showroom is chosen for build quality, tone, and value, backed by a guarantee and, on selectable items, our own repair service.</p>
-      <p>Come in and try before you buy, or tell us what you're after over WhatsApp — guitars, violins, drum sets, Darbuka, Congo and Bongo drums, Cajon, keyboards, brass and school instruments — and we'll bring it to your door, anywhere on the island.</p>
-      <div class="about-tags">
-        <span>Guitars & Bass</span><span>Violins</span><span>Drum Kits</span>
-        <span>Casio & Yamaha Keyboards</span><span>Percussion</span><span>School Instruments</span><span>Repairs</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FEATURES ============ -->
-<section class="features">
-  <div class="wrap">
-    <div class="feature reveal">
-      <span class="fnum">Trusted Brands</span>
-      <h3>Reputed brands, guaranteed</h3>
-      <p>Every instrument we stock comes from names you already trust, backed by a Dinu Music guarantee on every sale.</p>
-    </div>
-    <div class="feature reveal">
-      <span class="fnum">Delivery</span>
-      <h3>Island-wide delivery</h3>
-      <p>Order from anywhere in Sri Lanka — we pack and deliver instruments safely to your doorstep, no exceptions.</p>
-    </div>
-    <div class="feature reveal">
-      <span class="fnum">Pricing</span>
-      <h3>Lowest prices, no compromise</h3>
-      <p>We match showroom quality with prices that make sense — the highest quality items that fit your budget.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ REVIEWS ============ -->
-<section id="reviews">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div><h2>What Musicians Say</h2><p>Word of mouth from customers across the island.</p></div>
-      <a href="http://g.page/r/CQXoTe06TF9gEAE" target="_blank" rel="noopener" class="see-all">Read more on Google →</a>
-    </div>
-    <div class="showcase-grid reveal">
-      <div class="showcase-card">
-        <span class="quote-mark">"</span>
-        <p>Bought a full drum kit and they delivered it to Kandy within days, no hassle. Setup was perfect out of the box.</p>
-        <div class="who">R. Fernando</div><div class="role">Drummer, wedding band</div>
-      </div>
-      <div class="showcase-card">
-        <span class="quote-mark">"</span>
-        <p>My daughter's first violin came from Dinu — the staff took the time to explain sizing and even tuned it for us.</p>
-        <div class="who">N. Perera</div><div class="role">Parent</div>
-      </div>
-      <div class="showcase-card">
-        <span class="quote-mark">"</span>
-        <p>Fair prices on a Yamaha keyboard and they still repair it two years later. That's rare from a music shop.</p>
-        <div class="who">S. Jayasuriya</div><div class="role">Home studio owner</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ UPDATES / SOCIAL ============ -->
-<section class="updates">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div><h2>Latest From Dinu Music</h2><p>New stock, videos and reviews — follow along on our channels.</p></div>
-    </div>
-    <div class="update-grid reveal">
-      <a class="update-card" href="https://www.facebook.com/Dinumusicshop" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-        <h4>New Arrivals on Facebook</h4>
-        <p>See what's just landed in the showroom, posted as it arrives.</p>
-        <span class="go">Visit our page →</span>
-      </a>
-      <a class="update-card" href="https://www.youtube.com/channel/UCqOj6ip14NeLqztmG6ZoBpA" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l5 3-5 3z"/></svg>
-        <h4>Watch on YouTube</h4>
-        <p>Instrument walkthroughs, unboxings and showroom tours.</p>
-        <span class="go">Watch now →</span>
-      </a>
-      <a class="update-card" href="http://g.page/r/CQXoTe06TF9gEAE" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 17.3l-6.2 3.7 1.6-7-5.4-4.6 7.1-.6L12 2l2.9 6.8 7.1.6-5.4 4.6 1.6 7z"/></svg>
-        <h4>Read Customer Reviews</h4>
-        <p>See what other musicians say about buying from Dinu Music.</p>
-        <span class="go">Read on Google →</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ WHATSAPP PROMO ============ -->
-<section class="promo-strip">
-  <div class="wrap">
-    <div>
-      <h3>Prefer to just ask? Message us on WhatsApp.</h3>
-      <p>Tell us the instrument, your budget, and where you're located — we'll reply with what's in stock and a delivery estimate, no showroom visit required.</p>
-    </div>
-    <a href="https://wa.me/94717811388?text=Hi!%20I'd%20like%20to%20ask%20about%20an%20instrument." target="_blank" rel="noopener" class="cta-btn">Start a WhatsApp Chat →</a>
-  </div>
-</section>
-
-<!-- ============ CONTACT ============ -->
-<section class="contact" id="contact">
-  <div class="wrap">
-    <div class="contact-info reveal">
-      <span class="eyebrow">Get In Touch</span>
-      <h2>Visit the showroom, or send us a note</h2>
-      <p>Pick up in person, or tell us what you're looking for — we'll quote you and arrange delivery anywhere on the island.</p>
-      <div class="info-row">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.4 2.1L8 9.9a16 16 0 006 6l1.4-1.4a2 2 0 012.1-.4c.9.3 1.8.5 2.7.6a2 2 0 011.8 2.2z"/></svg>
-        <div><div class="t">Phone</div><div class="v"><a href="tel:0777697989">0777 69 79 89</a></div></div>
-      </div>
-      <div class="info-row">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg>
-        <div><div class="t">Email</div><div class="v"><a href="mailto:info@dinumusicshop.com">info@dinumusicshop.com</a></div></div>
-      </div>
-      <div class="info-row">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s8-7.5 8-13a8 8 0 10-16 0c0 5.5 8 13 8 13z"/><circle cx="12" cy="9" r="2.5"/></svg>
-        <div><div class="t">Showroom</div><div class="v">Henihatta, Sri Lanka</div></div>
-      </div>
-      <div class="social-row">
-        <a href="https://www.facebook.com/Dinumusicshop" target="_blank" rel="noopener" aria-label="Facebook">f</a>
-        <a href="https://www.youtube.com/channel/UCqOj6ip14NeLqztmG6ZoBpA" target="_blank" rel="noopener" aria-label="YouTube">▶</a>
-        <a href="https://wa.me/94717811388?text=Hi!%20I'd%20like%20to%20enquire%20about%20instruments%20at%20Dinu%20Music%20Shop." target="_blank" rel="noopener" aria-label="WhatsApp">W</a>
-        <a href="https://ikman.lk/en/shops/dinu-music-shop" target="_blank" rel="noopener" aria-label="ikman.lk">ik</a>
-        <a href="http://g.page/r/CQXoTe06TF9gEAE" target="_blank" rel="noopener" aria-label="Google Reviews">★</a>
-      </div>
-    </div>
-
-    <form class="inquiry reveal" onsubmit="return false;">
-      <div class="row">
-        <div class="field"><label for="name">Your name</label><input id="name" type="text" placeholder="Kasun Perera" required></div>
-        <div class="field"><label for="email">Your email</label><input id="email" type="email" placeholder="you@email.com" required></div>
-      </div>
-      <div class="field full" style="margin-bottom:16px;">
-        <label for="subject">Subject</label>
-        <input id="subject" type="text" placeholder="e.g. Yamaha keyboard availability">
-      </div>
-      <div class="field full" style="margin-bottom:20px;">
-        <label for="message">Your message (optional)</label>
-        <textarea id="message" placeholder="Tell us what you're looking for..."></textarea>
-      </div>
-      <button class="submit-btn" type="submit">Send Inquiry</button>
-    </form>
-  </div>
-</section>
-
-<div class="map-wrap">
-  <iframe src="https://maps.google.com/maps?q=dinu%20music%20shop%20henihatta&t=m&z=13&output=embed&iwloc=near" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
-
-<!-- ============ FOOTER ============ -->
 <footer>
   <div class="wrap">
     <div class="foot-grid">
@@ -1028,6 +843,7 @@
   </div>
 </footer>
 
+
 <script>
 /*!
  * GSAP 3.12.5
@@ -1066,6 +882,7 @@
 
 !function(n,e){"object"==typeof exports&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define(e):n.anime=e()}(this,function(){"use strict";var i={update:null,begin:null,loopBegin:null,changeBegin:null,change:null,changeComplete:null,loopComplete:null,complete:null,loop:1,direction:"normal",autoplay:!0,timelineOffset:0},M={duration:1e3,delay:0,endDelay:0,easing:"easeOutElastic(1, .5)",round:0},j=["translateX","translateY","translateZ","rotate","rotateX","rotateY","rotateZ","scale","scaleX","scaleY","scaleZ","skew","skewX","skewY","perspective","matrix","matrix3d"],l={CSS:{},springs:{}};function C(n,e,t){return Math.min(Math.max(n,e),t)}function u(n,e){return-1<n.indexOf(e)}function o(n,e){return n.apply(null,e)}var w={arr:function(n){return Array.isArray(n)},obj:function(n){return u(Object.prototype.toString.call(n),"Object")},pth:function(n){return w.obj(n)&&n.hasOwnProperty("totalLength")},svg:function(n){return n instanceof SVGElement},inp:function(n){return n instanceof HTMLInputElement},dom:function(n){return n.nodeType||w.svg(n)},str:function(n){return"string"==typeof n},fnc:function(n){return"function"==typeof n},und:function(n){return void 0===n},nil:function(n){return w.und(n)||null===n},hex:function(n){return/(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(n)},rgb:function(n){return/^rgb/.test(n)},hsl:function(n){return/^hsl/.test(n)},col:function(n){return w.hex(n)||w.rgb(n)||w.hsl(n)},key:function(n){return!i.hasOwnProperty(n)&&!M.hasOwnProperty(n)&&"targets"!==n&&"keyframes"!==n}};function d(n){n=/\(([^)]+)\)/.exec(n);return n?n[1].split(",").map(function(n){return parseFloat(n)}):[]}function c(r,t){var n=d(r),e=C(w.und(n[0])?1:n[0],.1,100),a=C(w.und(n[1])?100:n[1],.1,100),o=C(w.und(n[2])?10:n[2],.1,100),n=C(w.und(n[3])?0:n[3],.1,100),u=Math.sqrt(a/e),i=o/(2*Math.sqrt(a*e)),c=i<1?u*Math.sqrt(1-i*i):0,s=i<1?(i*u-n)/c:-n+u;function f(n){var e=t?t*n/1e3:n,e=i<1?Math.exp(-e*i*u)*(+Math.cos(c*e)+s*Math.sin(c*e)):(1+s*e)*Math.exp(-e*u);return 0===n||1===n?n:1-e}return t?f:function(){var n=l.springs[r];if(n)return n;for(var e=0,t=0;;)if(1===f(e+=1/6)){if(16<=++t)break}else t=0;return n=e*(1/6)*1e3,l.springs[r]=n}}function q(e){return void 0===e&&(e=10),function(n){return Math.ceil(C(n,1e-6,1)*e)*(1/e)}}var H=function(b,e,M,t){if(0<=b&&b<=1&&0<=M&&M<=1){var x=new Float32Array(11);if(b!==e||M!==t)for(var n=0;n<11;++n)x[n]=k(.1*n,b,M);return function(n){return b===e&&M===t||0===n||1===n?n:k(r(n),e,t)}}function r(n){for(var e=0,t=1;10!==t&&x[t]<=n;++t)e+=.1;var r=e+.1*((n-x[--t])/(x[t+1]-x[t])),a=O(r,b,M);if(.001<=a){for(var o=n,u=r,i=b,c=M,s=0;s<4;++s){var f=O(u,i,c);if(0===f)return u;u-=(k(u,i,c)-o)/f}return u}if(0===a)return r;for(var l,d,p=n,h=e,g=e+.1,m=b,v=M,y=0;0<(l=k(d=h+(g-h)/2,m,v)-p)?g=d:h=d,1e-7<Math.abs(l)&&++y<10;);return d}};function r(n,e){return 1-3*e+3*n}function k(n,e,t){return((r(e,t)*n+(3*t-6*e))*n+3*e)*n}function O(n,e,t){return 3*r(e,t)*n*n+2*(3*t-6*e)*n+3*e}e={linear:function(){return function(n){return n}}},t={Sine:function(){return function(n){return 1-Math.cos(n*Math.PI/2)}},Expo:function(){return function(n){return n?Math.pow(2,10*n-10):0}},Circ:function(){return function(n){return 1-Math.sqrt(1-n*n)}},Back:function(){return function(n){return n*n*(3*n-2)}},Bounce:function(){return function(n){for(var e,t=4;n<((e=Math.pow(2,--t))-1)/11;);return 1/Math.pow(4,3-t)-7.5625*Math.pow((3*e-2)/22-n,2)}},Elastic:function(n,e){void 0===e&&(e=.5);var t=C(n=void 0===n?1:n,1,10),r=C(e,.1,2);return function(n){return 0===n||1===n?n:-t*Math.pow(2,10*(n-1))*Math.sin((n-1-r/(2*Math.PI)*Math.asin(1/t))*(2*Math.PI)/r)}}},["Quad","Cubic","Quart","Quint"].forEach(function(n,e){t[n]=function(){return function(n){return Math.pow(n,e+2)}}}),Object.keys(t).forEach(function(n){var r=t[n];e["easeIn"+n]=r,e["easeOut"+n]=function(e,t){return function(n){return 1-r(e,t)(1-n)}},e["easeInOut"+n]=function(e,t){return function(n){return n<.5?r(e,t)(2*n)/2:1-r(e,t)(-2*n+2)/2}},e["easeOutIn"+n]=function(e,t){return function(n){return n<.5?(1-r(e,t)(1-2*n))/2:(r(e,t)(2*n-1)+1)/2}}});var e,t,s=e;function P(n,e){if(w.fnc(n))return n;var t=n.split("(")[0],r=s[t],a=d(n);switch(t){case"spring":return c(n,e);case"cubicBezier":return o(H,a);case"steps":return o(q,a);default:return o(r,a)}}function a(n){try{return document.querySelectorAll(n)}catch(n){}}function I(n,e){for(var t,r=n.length,a=2<=arguments.length?e:void 0,o=[],u=0;u<r;u++)u in n&&(t=n[u],e.call(a,t,u,n))&&o.push(t);return o}function f(n){return n.reduce(function(n,e){return n.concat(w.arr(e)?f(e):e)},[])}function p(n){return w.arr(n)?n:(n=w.str(n)?a(n)||n:n)instanceof NodeList||n instanceof HTMLCollection?[].slice.call(n):[n]}function h(n,e){return n.some(function(n){return n===e})}function g(n){var e,t={};for(e in n)t[e]=n[e];return t}function x(n,e){var t,r=g(n);for(t in n)r[t]=(e.hasOwnProperty(t)?e:n)[t];return r}function D(n,e){var t,r=g(n);for(t in e)r[t]=(w.und(n[t])?e:n)[t];return r}function V(n){var e,t,r,a,o,u,i;return w.rgb(n)?(e=/rgb\((\d+,\s*[\d]+,\s*[\d]+)\)/g.exec(t=n))?"rgba("+e[1]+",1)":t:w.hex(n)?(e=(e=n).replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i,function(n,e,t,r){return e+e+t+t+r+r}),e=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(e),"rgba("+parseInt(e[1],16)+","+parseInt(e[2],16)+","+parseInt(e[3],16)+",1)"):w.hsl(n)?(t=/hsl\((\d+),\s*([\d.]+)%,\s*([\d.]+)%\)/g.exec(t=n)||/hsla\((\d+),\s*([\d.]+)%,\s*([\d.]+)%,\s*([\d.]+)\)/g.exec(t),n=parseInt(t[1],10)/360,u=parseInt(t[2],10)/100,i=parseInt(t[3],10)/100,t=t[4]||1,0==u?r=a=o=i:(r=c(u=2*i-(i=i<.5?i*(1+u):i+u-i*u),i,n+1/3),a=c(u,i,n),o=c(u,i,n-1/3)),"rgba("+255*r+","+255*a+","+255*o+","+t+")"):void 0;function c(n,e,t){return t<0&&(t+=1),1<t&&--t,t<1/6?n+6*(e-n)*t:t<.5?e:t<2/3?n+(e-n)*(2/3-t)*6:n}}function B(n){n=/[+-]?\d*\.?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?(%|px|pt|em|rem|in|cm|mm|ex|ch|pc|vw|vh|vmin|vmax|deg|rad|turn)?$/.exec(n);if(n)return n[1]}function m(n,e){return w.fnc(n)?n(e.target,e.id,e.total):n}function v(n,e){return n.getAttribute(e)}function y(n,e,t){var r,a,o;return h([t,"deg","rad","turn"],B(e))?e:(r=l.CSS[e+t],w.und(r)?(a=document.createElement(n.tagName),(n=n.parentNode&&n.parentNode!==document?n.parentNode:document.body).appendChild(a),a.style.position="absolute",a.style.width=100+t,o=100/a.offsetWidth,n.removeChild(a),n=o*parseFloat(e),l.CSS[e+t]=n):r)}function $(n,e,t){var r;if(e in n.style)return r=e.replace(/([a-z])([A-Z])/g,"$1-$2").toLowerCase(),e=n.style[e]||getComputedStyle(n).getPropertyValue(r)||"0",t?y(n,e,t):e}function b(n,e){return w.dom(n)&&!w.inp(n)&&(!w.nil(v(n,e))||w.svg(n)&&n[e])?"attribute":w.dom(n)&&h(j,e)?"transform":w.dom(n)&&"transform"!==e&&$(n,e)?"css":null!=n[e]?"object":void 0}function W(n){if(w.dom(n)){for(var e,t=n.style.transform||"",r=/(\w+)\(([^)]*)\)/g,a=new Map;e=r.exec(t);)a.set(e[1],e[2]);return a}}function X(n,e,t,r){var a=u(e,"scale")?1:0+(u(a=e,"translate")||"perspective"===a?"px":u(a,"rotate")||u(a,"skew")?"deg":void 0),o=W(n).get(e)||a;return t&&(t.transforms.list.set(e,o),t.transforms.last=e),r?y(n,o,r):o}function T(n,e,t,r){switch(b(n,e)){case"transform":return X(n,e,r,t);case"css":return $(n,e,t);case"attribute":return v(n,e);default:return n[e]||0}}function E(n,e){var t=/^(\*=|\+=|-=)/.exec(n);if(!t)return n;var r=B(n)||0,a=parseFloat(e),o=parseFloat(n.replace(t[0],""));switch(t[0][0]){case"+":return a+o+r;case"-":return a-o+r;case"*":return a*o+r}}function Y(n,e){var t;return w.col(n)?V(n):/\s/g.test(n)?n:(t=(t=B(n))?n.substr(0,n.length-t.length):n,e?t+e:t)}function F(n,e){return Math.sqrt(Math.pow(e.x-n.x,2)+Math.pow(e.y-n.y,2))}function Z(n){for(var e,t=n.points,r=0,a=0;a<t.numberOfItems;a++){var o=t.getItem(a);0<a&&(r+=F(e,o)),e=o}return r}function G(n){if(n.getTotalLength)return n.getTotalLength();switch(n.tagName.toLowerCase()){case"circle":return 2*Math.PI*v(n,"r");case"rect":return 2*v(t=n,"width")+2*v(t,"height");case"line":return F({x:v(t=n,"x1"),y:v(t,"y1")},{x:v(t,"x2"),y:v(t,"y2")});case"polyline":return Z(n);case"polygon":return e=n.points,Z(n)+F(e.getItem(e.numberOfItems-1),e.getItem(0))}var e,t}function Q(n,e){var e=e||{},n=e.el||function(n){for(var e=n.parentNode;w.svg(e)&&w.svg(e.parentNode);)e=e.parentNode;return e}(n),t=n.getBoundingClientRect(),r=v(n,"viewBox"),a=t.width,t=t.height,e=e.viewBox||(r?r.split(" "):[0,0,a,t]);return{el:n,viewBox:e,x:+e[0],y:+e[1],w:a,h:t,vW:e[2],vH:e[3]}}function z(n,e){var t=/[+-]?\d*\.?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?/g,r=Y(w.pth(n)?n.totalLength:n,e)+"";return{original:r,numbers:r.match(t)?r.match(t).map(Number):[0],strings:w.str(n)||e?r.split(t):[]}}function A(n){return I(n?f(w.arr(n)?n.map(p):p(n)):[],function(n,e,t){return t.indexOf(n)===e})}function _(n){var t=A(n);return t.map(function(n,e){return{target:n,id:e,total:t.length,transforms:{list:W(n)}}})}function R(e){for(var t=I(f(e.map(function(n){return Object.keys(n)})),function(n){return w.key(n)}).reduce(function(n,e){return n.indexOf(e)<0&&n.push(e),n},[]),a={},n=0;n<t.length;n++)!function(n){var r=t[n];a[r]=e.map(function(n){var e,t={};for(e in n)w.key(e)?e==r&&(t.value=n[e]):t[e]=n[e];return t})}(n);return a}function J(n,e){var t,r=[],a=e.keyframes;for(t in e=a?D(R(a),e):e)w.key(t)&&r.push({name:t,tweens:function(n,t){var e,r=g(t),a=(/^spring/.test(r.easing)&&(r.duration=c(r.easing)),w.arr(n)&&(2===(e=n.length)&&!w.obj(n[0])?n={value:n}:w.fnc(t.duration)||(r.duration=t.duration/e)),w.arr(n)?n:[n]);return a.map(function(n,e){n=w.obj(n)&&!w.pth(n)?n:{value:n};return w.und(n.delay)&&(n.delay=e?0:t.delay),w.und(n.endDelay)&&(n.endDelay=e===a.length-1?t.endDelay:0),n}).map(function(n){return D(n,r)})}(e[t],n)});return r}function K(i,c){var s;return i.tweens.map(function(n){var n=function(n,e){var t,r={};for(t in n){var a=m(n[t],e);w.arr(a)&&1===(a=a.map(function(n){return m(n,e)})).length&&(a=a[0]),r[t]=a}return r.duration=parseFloat(r.duration),r.delay=parseFloat(r.delay),r}(n,c),e=n.value,t=w.arr(e)?e[1]:e,r=B(t),a=T(c.target,i.name,r,c),o=s?s.to.original:a,u=w.arr(e)?e[0]:o,a=B(u)||B(a),r=r||a;return w.und(t)&&(t=o),n.from=z(u,r),n.to=z(E(t,u),r),n.start=s?s.end:0,n.end=n.start+n.delay+n.duration+n.endDelay,n.easing=P(n.easing,n.duration),n.isPath=w.pth(e),n.isPathTargetInsideSVG=n.isPath&&w.svg(c.target),n.isColor=w.col(n.from.original),n.isColor&&(n.round=1),s=n})}var U={css:function(n,e,t){return n.style[e]=t},attribute:function(n,e,t){return n.setAttribute(e,t)},object:function(n,e,t){return n[e]=t},transform:function(n,e,t,r,a){var o;r.list.set(e,t),e!==r.last&&!a||(o="",r.list.forEach(function(n,e){o+=e+"("+n+") "}),n.style.transform=o)}};function nn(n,u){_(n).forEach(function(n){for(var e in u){var t=m(u[e],n),r=n.target,a=B(t),o=T(r,e,a,n),t=E(Y(t,a||B(o)),o),a=b(r,e);U[a](r,e,t,n.transforms,!0)}})}function en(n,e){return I(f(n.map(function(o){return e.map(function(n){var e,t,r=o,a=b(r.target,n.name);if(a)return t=(e=K(n,r))[e.length-1],{type:a,property:n.name,animatable:r,tweens:e,duration:t.end,delay:e[0].delay,endDelay:t.endDelay}})})),function(n){return!w.und(n)})}function tn(n,e){function t(n){return n.timelineOffset||0}var r=n.length,a={};return a.duration=r?Math.max.apply(Math,n.map(function(n){return t(n)+n.duration})):e.duration,a.delay=r?Math.min.apply(Math,n.map(function(n){return t(n)+n.delay})):e.delay,a.endDelay=r?a.duration-Math.max.apply(Math,n.map(function(n){return t(n)+n.duration-n.endDelay})):e.endDelay,a}var rn=0;var N,S=[],an=("undefined"!=typeof document&&document.addEventListener("visibilitychange",function(){L.suspendWhenDocumentHidden&&(n()?N=cancelAnimationFrame(N):(S.forEach(function(n){return n._onDocumentVisibility()}),an()))}),function(){!(N||n()&&L.suspendWhenDocumentHidden)&&0<S.length&&(N=requestAnimationFrame(on))});function on(n){for(var e=S.length,t=0;t<e;){var r=S[t];r.paused?(S.splice(t,1),e--):(r.tick(n),t++)}N=0<t?requestAnimationFrame(on):void 0}function n(){return document&&document.hidden}function L(n){var c,s=0,f=0,l=0,d=0,p=null;function h(n){var e=window.Promise&&new Promise(function(n){return p=n});return n.finished=e}e=x(i,n=n=void 0===n?{}:n),t=J(r=x(M,n),n),n=_(n.targets),r=tn(t=en(n,t),r),a=rn,rn++;var e,t,r,a,k=D(e,{id:a,children:[],animatables:n,animations:t,duration:r.duration,delay:r.delay,endDelay:r.endDelay});h(k);function g(){var n=k.direction;"alternate"!==n&&(k.direction="normal"!==n?"normal":"reverse"),k.reversed=!k.reversed,c.forEach(function(n){return n.reversed=k.reversed})}function m(n){return k.reversed?k.duration-n:n}function o(){s=0,f=m(k.currentTime)*(1/L.speed)}function v(n,e){e&&e.seek(n-e.timelineOffset)}function y(e){for(var n=0,t=k.animations,r=t.length;n<r;){for(var a=t[n],o=a.animatable,u=a.tweens,i=u.length-1,c=u[i],i=(i&&(c=I(u,function(n){return e<n.end})[0]||c),C(e-c.start-c.delay,0,c.duration)/c.duration),s=isNaN(i)?1:c.easing(i),f=c.to.strings,l=c.round,d=[],p=c.to.numbers.length,h=void 0,g=0;g<p;g++){var m=void 0,v=c.to.numbers[g],y=c.from.numbers[g]||0,m=c.isPath?function(e,t,n){function r(n){return e.el.getPointAtLength(1<=t+(n=void 0===n?0:n)?t+n:0)}var a=Q(e.el,e.svg),o=r(),u=r(-1),i=r(1),c=n?1:a.w/a.vW,s=n?1:a.h/a.vH;switch(e.property){case"x":return(o.x-a.x)*c;case"y":return(o.y-a.y)*s;case"angle":return 180*Math.atan2(i.y-u.y,i.x-u.x)/Math.PI}}(c.value,s*v,c.isPathTargetInsideSVG):y+s*(v-y);!l||c.isColor&&2<g||(m=Math.round(m*l)/l),d.push(m)}var b=f.length;if(b)for(var h=f[0],M=0;M<b;M++){f[M];var x=f[M+1],w=d[M];isNaN(w)||(h+=x?w+x:w+" ")}else h=d[0];U[a.type](o.target,a.property,h,o.transforms),a.currentValue=h,n++}}function b(n){k[n]&&!k.passThrough&&k[n](k)}function u(n){var e=k.duration,t=k.delay,r=e-k.endDelay,a=m(n);if(k.progress=C(a/e*100,0,100),k.reversePlayback=a<k.currentTime,c){var o=a;if(k.reversePlayback)for(var u=d;u--;)v(o,c[u]);else for(var i=0;i<d;i++)v(o,c[i])}!k.began&&0<k.currentTime&&(k.began=!0,b("begin")),!k.loopBegan&&0<k.currentTime&&(k.loopBegan=!0,b("loopBegin")),a<=t&&0!==k.currentTime&&y(0),(r<=a&&k.currentTime!==e||!e)&&y(e),t<a&&a<r?(k.changeBegan||(k.changeBegan=!0,k.changeCompleted=!1,b("changeBegin")),b("change"),y(a)):k.changeBegan&&(k.changeCompleted=!0,k.changeBegan=!1,b("changeComplete")),k.currentTime=C(a,0,e),k.began&&b("update"),e<=n&&(f=0,k.remaining&&!0!==k.remaining&&k.remaining--,k.remaining?(s=l,b("loopComplete"),k.loopBegan=!1,"alternate"===k.direction&&g()):(k.paused=!0,k.completed||(k.completed=!0,b("loopComplete"),b("complete"),!k.passThrough&&"Promise"in window&&(p(),h(k)))))}return k.reset=function(){var n=k.direction;k.passThrough=!1,k.currentTime=0,k.progress=0,k.paused=!0,k.began=!1,k.loopBegan=!1,k.changeBegan=!1,k.completed=!1,k.changeCompleted=!1,k.reversePlayback=!1,k.reversed="reverse"===n,k.remaining=k.loop,c=k.children;for(var e=d=c.length;e--;)k.children[e].reset();(k.reversed&&!0!==k.loop||"alternate"===n&&1===k.loop)&&k.remaining++,y(k.reversed?k.duration:0)},k._onDocumentVisibility=o,k.set=function(n,e){return nn(n,e),k},k.tick=function(n){u(((l=n)+(f-(s=s||l)))*L.speed)},k.seek=function(n){u(m(n))},k.pause=function(){k.paused=!0,o()},k.play=function(){k.paused&&(k.completed&&k.reset(),k.paused=!1,S.push(k),o(),an())},k.reverse=function(){g(),k.completed=!k.reversed,o()},k.restart=function(){k.reset(),k.play()},k.remove=function(n){cn(A(n),k)},k.reset(),k.autoplay&&k.play(),k}function un(n,e){for(var t=e.length;t--;)h(n,e[t].animatable.target)&&e.splice(t,1)}function cn(n,e){var t=e.animations,r=e.children;un(n,t);for(var a=r.length;a--;){var o=r[a],u=o.animations;un(n,u),u.length||o.children.length||r.splice(a,1)}t.length||r.length||e.pause()}return L.version="3.2.1",L.speed=1,L.suspendWhenDocumentHidden=!0,L.running=S,L.remove=function(n){for(var e=A(n),t=S.length;t--;)cn(e,S[t])},L.get=T,L.set=nn,L.convertPx=y,L.path=function(n,e){var t=w.str(n)?a(n)[0]:n,r=e||100;return function(n){return{property:n,el:t,svg:Q(t),totalLength:G(t)*(r/100)}}},L.setDashoffset=function(n){var e=G(n);return n.setAttribute("stroke-dasharray",e),e},L.stagger=function(n,e){var i=(e=void 0===e?{}:e).direction||"normal",c=e.easing?P(e.easing):null,s=e.grid,f=e.axis,l=e.from||0,d="first"===l,p="center"===l,h="last"===l,g=w.arr(n),m=g?parseFloat(n[0]):parseFloat(n),v=g?parseFloat(n[1]):0,y=B(g?n[1]:n)||0,b=e.start||0+(g?m:0),M=[],x=0;return function(n,e,t){if(d&&(l=0),p&&(l=(t-1)/2),h&&(l=t-1),!M.length){for(var r,a,o,u=0;u<t;u++)s?(r=p?(s[0]-1)/2:l%s[0],a=p?(s[1]-1)/2:Math.floor(l/s[0]),r=r-u%s[0],a=a-Math.floor(u/s[0]),o=Math.sqrt(r*r+a*a),"x"===f&&(o=-r),M.push(o="y"===f?-a:o)):M.push(Math.abs(l-u)),x=Math.max.apply(Math,M);c&&(M=M.map(function(n){return c(n/x)*x})),"reverse"===i&&(M=M.map(function(n){return f?n<0?-1*n:-n:Math.abs(x-n)}))}return b+(g?(v-m)/x:m)*(Math.round(100*M[e])/100)+y}},L.timeline=function(u){var i=L(u=void 0===u?{}:u);return i.duration=0,i.add=function(n,e){var t=S.indexOf(i),r=i.children;function a(n){n.passThrough=!0}-1<t&&S.splice(t,1);for(var o=0;o<r.length;o++)a(r[o]);t=D(n,x(M,u)),t.targets=t.targets||u.targets,n=i.duration,t.autoplay=!1,t.direction=i.direction,t.timelineOffset=w.und(e)?n:E(e,n),a(i),i.seek(t.timelineOffset),e=L(t),a(e),r.push(e),n=tn(r,u);return i.delay=n.delay,i.endDelay=n.endDelay,i.duration=n.duration,i.seek(0),i.reset(),i.autoplay&&i.play(),i},i},L.easing=P,L.penner=s,L.random=function(n,e){return Math.floor(Math.random()*(e-n+1))+n},L});
 </script>
+
 <script>
   // mobile menu
   const toggle = document.getElementById('menuToggle');
@@ -1083,7 +900,7 @@
 
   gsap.registerPlugin(ScrollTrigger);
 
-  // ---------- scroll reveal (GSAP ScrollTrigger, staggered) ----------
+  // ---------- scroll reveal ----------
   document.querySelectorAll('.reveal').forEach(el => {
     const siblings = el.parentElement.querySelectorAll(':scope > .reveal');
     gsap.fromTo(el, {opacity:0, y:26}, {
@@ -1092,83 +909,21 @@
       delay: (Array.from(siblings).indexOf(el) % 4) * 0.08
     });
   });
-  // subtle stagger pop for product & category cards
-  // (grids also carry the .reveal class for their own fade-in above, so here we
-  // only animate y/scale on the children — opacity is left to the parent's
-  // .reveal tween to avoid a double-fade stutter)
-  gsap.utils.toArray('.prod-grid, .cat-cards, .cat-scroll, .showcase-grid, .update-grid, .brands-grid').forEach(grid=>{
+  gsap.utils.toArray('.prod-grid').forEach(grid=>{
     gsap.fromTo(grid.children, {y:22, scale:.97}, {
       y:0, scale:1, duration:.6, ease:'power2.out', stagger:0.07,
       scrollTrigger:{trigger:grid, start:'top 85%'}
     });
   });
 
-  // ---------- hero slider (GSAP crossfade + staggered copy) ----------
-  const slides = document.querySelectorAll('.slide');
-  const dots = document.querySelectorAll('.slider-nav button');
-  const heroSlider = document.querySelector('.hero-slider');
-  let current = 0, timer, isAnimating = false;
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  function animateCopy(slide){
-    const copy = slide.querySelector('.slide-copy');
-    if(!copy) return;
-    const targets = copy.querySelectorAll('.eyebrow, h1, p.lead, .slide-actions');
-    gsap.killTweensOf(targets);
-    gsap.fromTo(targets, {opacity:0, y:26}, {opacity:1, y:0, duration:.7, ease:'power3.out', stagger:0.1, delay:.15});
-  }
-
-  function goTo(i){
-    if(isAnimating) return; // guard against overlapping transitions from rapid clicks
-    const nextIndex = (i + slides.length) % slides.length;
-    if(nextIndex === current) return;
-    const prevSlide = slides[current];
-    const nextSlide = slides[nextIndex];
-    current = nextIndex;
-    isAnimating = true;
-
-    gsap.killTweensOf([prevSlide, nextSlide]);
-    gsap.to(prevSlide, {
-      opacity:0, duration:.5, ease:'power1.out',
-      onComplete:() => { prevSlide.classList.remove('active'); isAnimating = false; }
+  // ---------- product gallery thumbs ----------
+  document.querySelectorAll('.pd-thumbs button').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.pd-thumbs button').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('pdMainImg').src = btn.dataset.full;
     });
-    nextSlide.classList.add('active');
-    gsap.fromTo(nextSlide, {opacity:0}, {opacity:1, duration:.7, ease:'power1.out'});
-    dots.forEach(d=>d.classList.remove('active'));
-    dots[current].classList.add('active');
-    animateCopy(nextSlide);
-  }
-  function next(){ goTo(current + 1); }
-  function prev(){ goTo(current - 1); }
-  function startAuto(){ if(reduceMotion) return; stopAuto(); timer = setInterval(next, 6000); }
-  function stopAuto(){ clearInterval(timer); }
-  dots.forEach((d,i) => d.addEventListener('click', () => { goTo(i); startAuto(); }));
-  document.getElementById('nextBtn').addEventListener('click', () => { next(); startAuto(); });
-  document.getElementById('prevBtn').addEventListener('click', () => { prev(); startAuto(); });
-
-  // pause autoplay on hover/focus, and when the tab is hidden
-  if(heroSlider){
-    heroSlider.addEventListener('mouseenter', stopAuto);
-    heroSlider.addEventListener('mouseleave', startAuto);
-    heroSlider.addEventListener('focusin', stopAuto);
-    heroSlider.addEventListener('focusout', startAuto);
-
-    // basic swipe support on touch devices
-    let touchStartX = 0;
-    heroSlider.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].clientX; }, {passive:true});
-    heroSlider.addEventListener('touchend', e => {
-      const dx = e.changedTouches[0].clientX - touchStartX;
-      if(Math.abs(dx) < 40) return;
-      dx < 0 ? next() : prev();
-      startAuto();
-    }, {passive:true});
-  }
-  document.addEventListener('visibilitychange', () => {
-    if(document.hidden) stopAuto(); else startAuto();
   });
-
-  animateCopy(slides[0]);
-  startAuto();
 
   // ---------- cart (persisted to localStorage so it carries across pages) ----------
   let cart = [];
@@ -1233,15 +988,16 @@
   cartOverlay.addEventListener('click', closeCart);
   gsap.set(cartDrawer, {x:'100%'});
 
-  // ================= CHECKOUT =================
-  // DEMO MODE — this whole flow runs in the browser with simulated delays and
-  // no real backend or payment gateway, so it's safe to click through live in
-  // a client presentation. Order data is not saved anywhere and no real
-  // charge ever happens. See the bottom of this section for what a production
-  // build needs (a backend + real PayHere credentials) before going live.
-  const DEMO_MODE = true;
+  function addToCart(name, price, img, qty){
+    qty = qty || 1;
+    const existing = cart.find(i=>i.name===name);
+    if(existing) existing.qty += qty;
+    else cart.push({name, price:parseFloat(price), img, qty});
+    renderCart();
+  }
 
-  // Fill in the real business bank account when this goes live.
+  // ================= CHECKOUT =================
+  const DEMO_MODE = true;
   const BANK_DETAILS = {
     accountName: 'Dinu Music Shop',
     accountNumber: '0000 0000 0000',
@@ -1259,7 +1015,7 @@
   const summary1 = document.getElementById('checkoutSummary1');
   const summary2 = document.getElementById('checkoutSummary2');
 
-  let checkoutOrder = null; // { orderId, total, currency } once created on the backend
+  let checkoutOrder = null;
   let selectedMethod = null;
 
   function renderOrderSummary(el){
@@ -1296,7 +1052,6 @@
   checkoutClose.addEventListener('click', closeCheckout);
   checkoutOverlay.addEventListener('click', (e) => { if(e.target === checkoutOverlay) closeCheckout(); });
 
-  // ---- Step 1: customer details -> create order on the backend ----
   step1.addEventListener('submit', async (e) => {
     e.preventDefault();
     const submitBtn = step1.querySelector('button[type="submit"]');
@@ -1328,25 +1083,21 @@
 
   document.getElementById('checkoutBackTo1').addEventListener('click', () => showStep(1));
 
-  // ---- DEMO: simulate saving the order (real build posts this to a backend) ----
   function wait(ms){ return new Promise(r => setTimeout(r, ms)); }
   function makeOrderId(){
     return 'DINU-' + Date.now().toString(36).toUpperCase() + '-' + Math.random().toString(36).slice(2,6).toUpperCase();
   }
   async function createOrder(customer, notes){
-    await wait(650); // simulated network delay
+    await wait(650);
     const total = cart.reduce((s,i)=>s+i.price*i.qty,0);
     return { orderId: makeOrderId(), total: total.toFixed(2), currency: 'LKR', customer, notes };
   }
 
-
-  // ---- Step 2: choose payment method ----
   document.getElementById('payMethodPayhere').addEventListener('click', () => showPayhereDemo());
   document.getElementById('payMethodEzcash').addEventListener('click', () => showEzCashDemo());
   document.getElementById('payMethodBank').addEventListener('click', () => showBankTransfer());
   document.getElementById('payMethodCod').addEventListener('click', () => showCodConfirm());
 
-  // ---- DEMO: simulated PayHere card entry (production build hands off to the real PayHere SDK) ----
   function showPayhereDemo(){
     if(!checkoutOrder) return;
     const total = cart.reduce((s,i)=>s+i.price*i.qty,0);
@@ -1388,12 +1139,11 @@
     document.getElementById('demoCardForm').addEventListener('submit', async (e) => {
       e.preventDefault();
       step3.innerHTML = `<div class="checkout-loading"><div class="spinner"></div><p>Processing payment…</p></div>`;
-      await wait(1400); // simulated gateway round-trip
+      await wait(1400);
       step3.innerHTML = renderResult('success', checkoutOrder.orderId);
     });
   }
 
-  // ---- Bank transfer flow ----
   function showBankTransfer(){
     if(!checkoutOrder) return;
     step3.innerHTML = `
@@ -1421,13 +1171,12 @@
       const btn = e.currentTarget;
       btn.disabled = true;
       btn.textContent = 'Confirming…';
-      await wait(700); // simulated network delay
+      await wait(700);
       step3.innerHTML = renderResult('pending', checkoutOrder.orderId,
         'Thanks! We\'ll confirm your transfer and start preparing your order. For the fastest confirmation, send your payment slip on WhatsApp using the button below.');
     });
   }
 
-  // ---- DEMO: eZ Cash mobile wallet flow ----
   function showEzCashDemo(){
     if(!checkoutOrder) return;
     const total = cart.reduce((s,i)=>s+i.price*i.qty,0);
@@ -1455,12 +1204,11 @@
     document.getElementById('demoEzForm').addEventListener('submit', async (e) => {
       e.preventDefault();
       step3.innerHTML = `<div class="checkout-loading"><div class="spinner"></div><p>Payment request sent — waiting for approval on your phone…</p></div>`;
-      await wait(1600); // simulated wallet approval round-trip
+      await wait(1600);
       step3.innerHTML = renderResult('success', checkoutOrder.orderId, 'Payment approved via eZ Cash. Your order is confirmed and a receipt has been sent to your email.');
     });
   }
 
-  // ---- Cash on Delivery ----
   function showCodConfirm(){
     if(!checkoutOrder) return;
     const total = cart.reduce((s,i)=>s+i.price*i.qty,0);
@@ -1479,7 +1227,7 @@
       const btn = e.currentTarget;
       btn.disabled = true;
       btn.textContent = 'Confirming…';
-      await wait(600); // simulated network delay
+      await wait(600);
       step3.innerHTML = renderResult('pending', checkoutOrder.orderId,
         `Order confirmed! Have ${fmt(total)} ready for the delivery rider — no online payment needed.`);
     });
@@ -1499,38 +1247,12 @@
       </div>`;
   }
 
+  // ---------- generic "add to cart" (used by related-product cards) ----------
   document.querySelectorAll('.add-cart').forEach(btn=>{
     btn.addEventListener('click', (e)=>{
       const {name, price, img} = btn.dataset;
-      const p = parseFloat(price);
-      const existing = cart.find(i=>i.name===name);
-      if(existing) existing.qty++;
-      else cart.push({name, price:p, img, qty:1});
-      renderCart();
-
-      // anime.js flying thumbnail + button feedback
-      const rect = btn.getBoundingClientRect();
-      const cartRect = cartBtn.getBoundingClientRect();
-      const fly = document.createElement('img');
-      fly.src = img;
-      fly.className = 'fly-thumb';
-      fly.style.left = rect.left + rect.width/2 - 23 + 'px';
-      fly.style.top = rect.top + rect.height/2 - 23 + 'px';
-      document.body.appendChild(fly);
-      anime({
-        targets: fly,
-        left: cartRect.left + cartRect.width/2 - 23,
-        top: cartRect.top + cartRect.height/2 - 23,
-        scale: [1, 0.2],
-        opacity: [1, 0.6],
-        easing: 'easeInCubic',
-        duration: 700,
-        complete: () => {
-          fly.remove();
-          anime({targets: cartBtn, scale:[1,1.35,1], duration:380, easing:'easeOutElastic(1, .6)'});
-        }
-      });
-
+      addToCart(name, price, img, 1);
+      flyToCart(btn, img);
       btn.classList.add('added');
       const original = btn.textContent;
       btn.textContent = 'Added ✓';
@@ -1538,7 +1260,57 @@
       setTimeout(()=>{ btn.textContent = original; btn.classList.remove('added'); }, 1200);
     });
   });
+
+  function flyToCart(originEl, img){
+    const rect = originEl.getBoundingClientRect();
+    const cartRect = cartBtn.getBoundingClientRect();
+    const fly = document.createElement('img');
+    fly.src = img;
+    fly.className = 'fly-thumb';
+    fly.style.left = rect.left + rect.width/2 - 23 + 'px';
+    fly.style.top = rect.top + rect.height/2 - 23 + 'px';
+    document.body.appendChild(fly);
+    anime({
+      targets: fly,
+      left: cartRect.left + cartRect.width/2 - 23,
+      top: cartRect.top + cartRect.height/2 - 23,
+      scale: [1, 0.2],
+      opacity: [1, 0.6],
+      easing: 'easeInCubic',
+      duration: 700,
+      complete: () => {
+        fly.remove();
+        anime({targets: cartBtn, scale:[1,1.35,1], duration:380, easing:'easeOutElastic(1, .6)'});
+      }
+    });
+  }
+
+  // ---------- product page: quantity stepper + main add-to-cart / buy now ----------
+  const pdQtyEl = document.getElementById('pdQty');
+  const pdMinus = document.getElementById('pdQtyMinus');
+  const pdPlus = document.getElementById('pdQtyPlus');
+  let pdQty = 1;
+  pdMinus.addEventListener('click', ()=>{ if(pdQty>1) pdQty--; pdQtyEl.textContent = pdQty; });
+  pdPlus.addEventListener('click', ()=>{ if(pdQty<20) pdQty++; pdQtyEl.textContent = pdQty; });
+
+  const pdAddBtn = document.getElementById('pdAddToCart');
+  const pdBuyBtn = document.getElementById('pdBuyNow');
+  pdAddBtn.addEventListener('click', ()=>{
+    const {name, price, img} = pdAddBtn.dataset;
+    addToCart(name, price, img, pdQty);
+    flyToCart(pdAddBtn, img);
+    openCart();
+    pdQty = 1; pdQtyEl.textContent = pdQty;
+  });
+  pdBuyBtn.addEventListener('click', ()=>{
+    const {name, price, img} = pdBuyBtn.dataset;
+    addToCart(name, price, img, pdQty);
+    pdQty = 1; pdQtyEl.textContent = pdQty;
+    openCheckout();
+  });
+
   renderCart();
+
 </script>
 
 </body>
